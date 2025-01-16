@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Position Sticky Task</title>
+    <style>
+        body{
+            padding: 0px;
+        }
+        h1{
+            text-align: center;
+        }
+
+        .row{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .col{
+            width: 60%;
+        }
+
+        .title{
+            color: white;
+            background-color: #000000;
+            padding: 15px;
+            position: sticky;
+            top: 0px;
+            margin: 0px;
+            /* margin-top: 20px; */
+        }
+
+        .question .option{
+            margin: 10px 0px 0px 0px;
+        }
+
+        .words li{
+            margin: 20px 0px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <h1> Sticky Positioning </h1>
+        <div class="col">
+            <div class="title">A</div>
+            <div class="words">
+                <ul type="none">
+                    <li>Apple</li>
+                    <li>Ant</li>
+                    <li>Altimeter</li>
+                    <li>Airplane</li>
+                </ul>
+            </div>
+            <div class="title">B</div>
+            <div class="words">
+                <ul type="none">
+                    <li>Bird</li>
+                    <li>Buzzard</li>
+                    <li>Bee</li>
+                    <li>Banana</li>
+                    <li>Beanstalk</li>
+                </ul>
+            </div>
+            <div class="title">C</div>
+            <div class="words">
+                <ul type="none">
+                    <li>Calculator</li>
+                    <li>Cane</li>
+                    <li>Camera</li>
+                    <li>Camel</li>
+                </ul>
+            </div>
+            <div class="title">D</div>
+            <div class="words">
+                <ul type="none">
+                    <li>Duck</li>
+                    <li>Dime</li>
+                    <li>Dipstick</li>
+                    <li>Drone</li>
+                </ul>
+            </div>
+            <div class="title">E</div>
+            <div class="words">
+                <ul type="none">
+                    <li>Egg</li>
+                    <li>Elephant</li>
+                    <li>Egret</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

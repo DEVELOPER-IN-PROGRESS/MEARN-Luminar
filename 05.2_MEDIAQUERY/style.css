@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    text-align: center;
+}
+
+body{
+    background-color: rgb(194, 255, 172);
+}
+
+header{
+    background-color:#52ec71;
+    padding: 20px;
+}
+
+.row{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.col{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(107, 197, 236);
+    margin: 10px;
+}
+
+@media(max-width:400px){
+    .row{
+        flex-direction: column;
+    }
+
+    header{
+        background-color:  #ff8484;
+    }
+}

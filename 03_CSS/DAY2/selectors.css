@@ -1,0 +1,42 @@
+/* Universal Selectors */
+*{
+    text-align: center;
+}
+
+/* tag selector */
+h1{
+    color: purple;
+}
+
+#head{
+    color:dodgerblue;
+}
+
+.cls{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1,p,li{
+    font-weight: bold;
+}
+
+.submit{
+    background-color: chartreuse;
+    color: red;
+}
+
+.submit:hover{
+    background-color: red;
+    color: chartreuse;
+    width: 120px;
+}
+
+
+
+p::first-letter{
+    color: aquamarine;
+}
+
+p::first-line{
+    color: greenyellow
+}

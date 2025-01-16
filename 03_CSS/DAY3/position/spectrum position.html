@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Spectrum Position Absolute</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        h1{
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .container{
+            width: 100%;
+            background-color: black;
+            height: 800px;
+        }
+
+        .specbox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .col{
+            position: absolute;
+            width: 100px;
+            height: 160px;
+            background-color: orange;
+        }
+
+        .row{
+           position: relative;
+           margin-bottom:40px;
+           height: 160px;
+        }
+
+        .row1{
+            width: 700px;
+        }
+
+        .row2{
+            width: 800px;
+        }
+
+        .row3{
+            width: 900px;
+        }
+
+        .row1 .col1{
+            background-color: #55566b;
+            left: 0px;
+        }
+        .row1 .col2{
+            background-color:#458670 ;
+            left: 110px;
+        }
+        .row1 .col3{
+            background-color:#15d079 ;
+            left: 220px;
+        }
+        .row1 .col4{
+            background-color: #05ff48;
+            left: 330px;
+        }
+        .row1 .col5{
+            background-color:#e3e3e3 ;
+            left: 440px;
+        }
+        .row2 .col1{
+            background-color: #fea606;
+            left: 0px;
+        }
+        .row2 .col2{
+            background-color: #fe514d;
+            left: 110px;
+        }
+        .row2 .col3{
+            background-color: #d18ca9;
+            left: 220px;
+        }
+        .row2 .col4{
+            background-color: #7e65fe;
+            left: 330px;
+        }
+        .row2 .col5{
+            background-color: #5106ff ;
+            left: 440px;
+        }
+        .row2 .col6{
+            background-color:#8463fa ;
+            left: 550px;
+        }
+        .row2 .col7{
+            background-color:#867d90 ;
+            left: 660px;
+        }
+        .row3 .col1{
+            background-color:#48f4fb;
+            left: 0px;
+        }
+        .row3 .col2{
+            background-color:#d1fea3;
+            left: 110px;
+        }
+        .row3 .col3{
+            background-color:#febe5c;
+            left: 220px;
+        }
+        .row3 .col4{
+            background-color:#e50b62;
+            left: 330px;
+        }
+        .row3 .col5{
+            background-color:#431327;
+            left: 440px;
+        }
+        .row3 .col6{
+            background-color:#08fdf0;
+            left: 550px;
+        }
+        .row3 .col7{
+            background-color:#50c3a5;
+            left: 660px;
+        }
+        .row3 .col8{
+            background-color:#5e61b0;
+            left: 770px;
+        }
+        .row3 .col9{
+            background-color:#562b72;
+            left: 880px;
+        }
+
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sepctrum V Ellsworth Kelly</h1>
+        <div class="specbox">
+            <div class="row row1">
+                <div class="col col1"></div>
+                <div class="col col2"></div>
+                <div class="col col3"></div>
+                <div class="col col4"></div>
+                <div class="col col5"></div>
+            </div>
+            <div class="row row2">
+                <div class="col col1"></div>
+                <div class="col col2"></div>
+                <div class="col col3"></div>
+                <div class="col col4"></div>
+                <div class="col col5"></div>
+                <div class="col col6"></div>
+                <div class="col col7"></div>
+            </div>
+            <div class="row row3">
+                <div class="col col1"></div>
+                <div class="col col2"></div>
+                <div class="col col3"></div>
+                <div class="col col4"></div>
+                <div class="col col5"></div>
+                <div class="col col6"></div>
+                <div class="col col7"></div>
+                <div class="col col8"></div>
+                <div class="col col9"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

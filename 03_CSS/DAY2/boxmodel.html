@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model </title>
+    <style>
+        *{
+            font-family: "Playwrite AU VIC Guides", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .overlay,.overlay2{
+            display: inline-block;
+            border: 15px outset blueviolet;
+            width: 250px;
+            height: 250px;
+            padding: 50px;
+            margin: 40px;
+            border-radius: 50%;
+        }
+
+        .overlay2{
+            border-color: darkorange;
+            border-radius: 0px;
+            border-top-left-radius:50% ;
+            border-bottom-right-radius: 50%;
+        }
+
+        h1{
+            text-shadow: 5px 3px 2px  grey;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC+Guides&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- border: solid , dotted , dash -->
+
+    <div class="overlay">
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatum voluptates repellat sed eius, sequi vero molestiae reiciendis nobis magnam? Sint, porro ipsum? Quia iste, distinctio mollitia ex temporibus expedita.</p>
+    </div>
+
+    <div class="overlay2">
+        <h1>welcome</h1>
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatum voluptates repellat sed eius, sequi vero molestiae reiciendis nobis magnam? Sint, porro ipsum? Quia iste.</p>
+    </div>
+</body>
+</html>

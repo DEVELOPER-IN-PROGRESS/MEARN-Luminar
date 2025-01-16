@@ -1,0 +1,16 @@
+body{
+    background: url('https://wallpapers.com/images/high/beautiful-sky-background-g3s17ha3ry0kjhzj.webp') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    backdrop-filter: blur(5);
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid darkslateblue;
+}
+
+h1{
+    color: aquamarine;
+}

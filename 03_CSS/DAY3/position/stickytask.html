@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Position Sticky Task</title>
+    <style>
+        body{
+            padding: 0px;
+        }
+        h1{
+            text-align: center;
+        }
+
+        .row{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .col{
+            width: 60%;
+        }
+
+        .question .title{
+            color: white;
+            background-color: #000000;
+            padding: 15px;
+            position: sticky;
+            top: 0px;
+            margin: 0px;
+
+        }
+
+        .question .option{
+            margin: 10px 0px 0px 0px;
+        }
+
+        .option li{
+            margin: 20px 0px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <h1> Sticky Question Bar </h1>
+        <ul type="none">
+            <li class="question">
+                <div class="title">1) Which property is used to align flex items along the main axis?</div>
+                <ol type="A" class="option">
+                    <li>align-items</li>
+                    <li>justify-content</li>
+                    <li>align-content</li>
+                    <li>flex-direction</li>
+                    <li>order</li>
+                </ol>
+            </li>
+            <li class="question">
+                <div class="title">2) Which value of the 'flex-direction' property makes the flex items stack vertically from top to bottom?</div>
+                <ol type="A" class="option">
+                    <li>row</li>
+                    <li>column</li>
+                    <li>row-reverse</li>
+                    <li>column-reverse</li>
+                    <li>wrap</li>
+                </ol>
+            </li>
+            <li class="question">
+                <div class="title">3) Which 'position' value allows an element to be positioned relative to its nearest positioned ancestor?</div>
+                <ol type="A" class="option">
+                    <li>static</li>
+                    <li>relative</li>
+                    <li>absolute</li>
+                    <li>fixed</li>
+                    <li>sticky</li>
+                </ol>
+            </li>
+            <li class="question">
+                <div class="title">4)Which property is used to define the stacking order of elements (useful for overlapping elements)?</div>
+                <ol type="A" class="option">
+                    <li>overflow</li>
+                    <li>clip</li>
+                    <li>z-index</li>
+                    <li>top</li>
+                    <li>visibility</li>
+                </ol>
+            </li>
+            <li class="question">
+                <div class="title">5) Which pseudo-selector is used to target the first child element within its parent?</div>
+                <ol type="A" class="option">
+                    <li>:first-of-type</li>
+                    <li>:nth-child(1)</li>
+                    <li>:first-child</li>
+                    <li>:only-child</li>
+                    <li>:hover</li>
+                </ol>
+            </li>
+
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>
