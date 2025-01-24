@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS</title>
+    <style>
+        :root{
+            --bg-common: #c2e3ff9e;
+            --bg2:#ca9affb0;
+        }
+        /* .cartwr{
+            width: 60px;
+            height: ;
+        } */
+        .menu-cart{
+            width: 40px;
+            height: 40px;
+        }
+
+        .mission{
+            background: var(--bg-common);
+        }
+
+        .block{
+            background-color: var(--bg2);
+        }
+
+        .catcards{
+            width: 200px;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-lvh bg-[url('https://static.vecteezy.com/system/resources/previews/004/299/830/non_2x/shopping-online-on-phone-with-podium-paper-art-modern-pink-background-gifts-box-illustration-free-vector.jpg')]   bg-cover bg-fixed bg-bottom-right bg-center bg-no-repeat">
+
+<section >
+        <header class="flex space-x-4 justify-between items-center ">
+            <!-- <nav > -->
+                <a href="" class="brandlogo">
+                    <img src="./blogo.png" alt="shop logo" width="90" height="40" class="logo border border-none" />
+                </a>
+                <ul class="flex space-x-4 ">
+                    <li class="">
+                       <a href="#" class="link text-slate-600 hover:text-violet-500">Home</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="link text-slate-600 hover:text-violet-500">About Us</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="link text-slate-600 hover:text-violet-500">Products</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="link text-slate-600 hover:text-violet-500">Services</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="link text-slate-600 hover:text-violet-500 ">Contact</a>
+                    </li>
+                </ul>
+                <div class="cartwr mr-5">
+                       <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="cart" class="menu-cart">
+                </div>
+            <!-- </nav> -->
+        </header>
+</section>
+
+<section class="hero mt-16">
+
+
+    <h1 class="text-light-800  text-center text-6xl my-5 font-light">
+        Home Stories for Winter
+    </h1>
+    <p class="mx-auto text-center w-4/5 text-xl">We invite you to explore this inspiring home story and discover our seasonal offers and limited editions available online and at participating partners.</p>
+    <div class="text-center">
+        <button class="text-neutral-50 bg-sky-800 p-4 my-9 rounded-lg hover:bg-sky-600 rounded w-100">Shop Now!</button>
+    </div>
+</section>
+
+<section class="maincategories my-16">
+    <div class="mx-auto flex flex-wrap justify-center gap-4 w-[95vw]">
+
+        <div class="w-[45%] bg-gray-800 rounded-lg overflow-hidden flex flex-col">
+            <div class="relative overflow-hidden">
+                <img src="https://static.vitra.com/media-resized/P83FYjYoawuYrz5fHtl3cWGpdNtWg-JBf0WQHW6Kx5Y/fill/1440/810/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0LzkzNDAxNTQvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84NjIxMjMyMy5qcGc.jpg" alt="Image 1"
+                    class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+            </div>
+            <div class="p-4 flex flex-col items-center text-white">
+                <a href="#" class="text-center hover:text-red-600 transition-colors duration-300">
+                    <h2 class="text-lg font-light mb-2 capitalize">Grand Repos & Grand Relax</h2>
+                    <p class="text-sm capitalize">discover our offer</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="w-[45%] bg-gray-800 rounded-lg overflow-hidden flex flex-col">
+            <div class="relative overflow-hidden">
+                <img src="https://static.vitra.com/media-resized/cqWMEbejuAGs4glMjaF7uQDanCkaKfqBqQIwwcbwChw/fill/1440/810/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0Lzk0MTc3NTcvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84Njg5MDg4OC5qcGc.jpg" alt="Image 2"
+                    class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+            </div>
+            <div class="p-4 flex flex-col items-center text-white">
+                <a href="#" class="text-center hover:text-red-600 transition-colors duration-300">
+                    <h2 class="text-lg font-light mb-2 capitalize">tip ton RE</h2>
+                    <p class="text-sm capitalize">The Chair that can't sit still - in 4 new colors</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="w-[45%] bg-gray-800 rounded-lg overflow-hidden flex flex-col">
+            <div class="relative overflow-hidden">
+                <img src="https://static.vitra.com/media-resized/Ij35R4nsVqrfpSYXIUcCGdGDp-xKC-oVEhdkxm9Q_DE/fill/1440/810/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0LzkzNDcwNTEvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84NjMyNTU4Ni5qcGc.jpg" alt="Image 3"
+                    class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+            </div>
+            <div class="p-4 flex flex-col items-center text-white">
+                <a href="#" class="text-center hover:text-red-600 transition-colors duration-300">
+                    <h2 class="text-lg font-light mb-2 capitalize">Wall clocks</h2>
+                    <p class="text-sm capitalize">limited edition</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="w-[45%] bg-gray-800 rounded-lg overflow-hidden flex flex-col">
+            <div class="relative overflow-hidden">
+                <img src="https://static.vitra.com/media-resized/14L5P3Yar2nOi3U0Fz5CH4L0SKyAq31K49Gy2J7bTcw/fill/1440/810/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0LzgyMDg3MTUvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC83NzkzNjg5My5qcGc.jpg" alt="Image 4"
+                    class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+            </div>
+            <div class="p-4 flex flex-col items-center text-white">
+                <a href="#" class="text-center hover:text-red-600 transition-colors duration-300">
+                    <h2 class="text-lg font-light mb-2 capitalize">Tyde 2 home Desk</h2>
+                    <p class="text-sm capitalize">the sit stand table system for your home</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- background: #c2e3ff9e; -->
+
+<section class="mission  py-12">
+    <h2 class="text-light-800  text-center text-6xl my-5 font-light">
+        Rustic Root's Environmental Mission
+   </h2>
+   <p class="mx-auto text-emerald-500 w-[80vw] text-center text-xl">
+    The urgent need for climate action has given rise to a new vocabulary. ‘CO₂ emissions’, ‘net zero’, ‘post-consumer plastic’ and other terms have become buzzwords. At Vitra, we spent the last years untangling and interpreting them. The result is this glossary, shared here to bring clarity and support fact-based conversations on this complex topic.
+   </p>
+
+   <div class="my-12 flex justify-center gap-4">
+        <div class="w-[30%] block  p-12 ">
+            <h3 class="text-center font-semibold text-2xl mb-8">
+                Eccological Footprint
+            </h3>
+            <p class="text-center text-md font-medium">Vitra will be a net positive company based on all the indicators of its ecological footprint.</p>
+        </div>
+        <div class="w-[30%] block  p-12 ">
+            <h3 class="text-center font-semibold text-2xl mb-8">
+                Circular economy
+            </h3>
+            <p class="text-center text-md font-medium">Vitra will follow every product over its entire lifespan, ensuring the longest possible use and facilitating its recycling and disposal.</p>
+        </div>
+        <div class="w-[30%] block  p-12 ">
+            <h3 class="text-center font-semibold text-2xl mb-8">
+                Transparency
+            </h3>
+            <p class="text-center text-md font-medium">Customers will be able to make their purchasing decisions based on detailed information as to where and how a product has been manufactured and which partners were involved.
+            </p>
+        </div>
+   </div>
+</section>
+
+<section class="mission  py-12">
+    <h2 class="text-light-800  text-center text-6xl my-5 font-light">
+         Products Categories
+   </h2>
+
+   <div class="w-[90vw] mx-auto overflow-x-auto whitespace-nowrap scrollbar-hide py-5">
+        <div class="flex space-x-4">
+
+            <div class="relative w-[250px] h-[350px] rounded-lg overflow-hidden shrink-0 group">
+                <img src="https://static.vitra.com/media-resized/SJB6S_vgOmuDVcVoELmpimIGwGSgSMse8urwfP5HSn8/fill/0/550/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0LzkwMTY1MjAvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84Mjc1NTY4Mi5qcGc.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-500 group-hover:bg-opacity-0"></div>
+                <h2 class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold transition-all duration-500 group-hover:bottom-4 group-hover:translate-y-[45%]">
+                    Chairs
+                </h2>
+            </div>
+
+            <div class="relative w-[250px] h-[350px] rounded-lg overflow-hidden shrink-0 group">
+                <img src="https://static.vitra.com/media-resized/7_P0GNd20oanh1NDA3kEdylxqiaMSUMiFwPSDyBnMLs/fill/0/550/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0Lzg5ODUxOTkvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84Mjc1NjQ1OS5qcGc.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-500 group-hover:bg-opacity-0"></div>
+                <h2 class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold transition-all duration-500 group-hover:bottom-4 group-hover:translate-y-[45%]">
+                    Dining Tables
+                </h2>
+            </div>
+
+            <div class="relative w-[250px] h-[350px] rounded-lg overflow-hidden shrink-0 group">
+                <img src="https://static.vitra.com/media-resized/L1STkxooDKH6U4ctLVqhmuC5kwlF8zQ_Q-NCUffzD_4/fill/0/550/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0Lzg5ODUxNDcvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84Mjc1NjMzNS5qcGc.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-500 group-hover:bg-opacity-0"></div>
+                <h2 class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold transition-all duration-500 group-hover:bottom-4 group-hover:translate-y-[45%]">
+                    Office Chairs
+                </h2>
+            </div>
+
+            <div class="relative w-[250px] h-[350px] rounded-lg overflow-hidden shrink-0 group">
+                <img src="https://static.vitra.com/media-resized/HLpDs6wvzXrsusO1KlWo9YzHt3f6Ov7Xdacnv_KFx9o/fill/0/550/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0LzU3NzAyOTAvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC82MTU1OTcyMS5qcGc.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-500 group-hover:bg-opacity-0"></div>
+                <h2 class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold transition-all duration-500 group-hover:bottom-4 group-hover:translate-y-[45%]">
+                    Lounge Chairs
+                </h2>
+            </div>
+
+
+            <div class="relative w-[250px] h-[350px] rounded-lg overflow-hidden shrink-0 group">
+                <img src=" https://static.vitra.com/media-resized/SPl3aoQE7v6T8wPUwkSGuh_QejISOTjzdFHtoWfyY7k/fill/0/550/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0Lzg5ODU2MzMvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84Mjc1NjY0My5qcGc.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-500 group-hover:bg-opacity-0"></div>
+                <h2 class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold transition-all duration-500 group-hover:bottom-4 group-hover:translate-y-[45%]">
+                   Sofa's
+                </h2>
+            </div>
+
+            <div class="relative w-[250px] h-[350px] rounded-lg overflow-hidden shrink-0 group">
+                <img src="https://static.vitra.com/media-resized/vXByit5U3ZV73H0f33PQyvnVPg0x4uYZHZdlUklBhvo/fill/0/550/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0Lzg5ODUxMTAvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84Mjc1NjMyNS5qcGc.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-500 group-hover:bg-opacity-0"></div>
+                <h2 class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold transition-all duration-500 group-hover:bottom-4 group-hover:translate-y-[45%]">
+                   Coffee Table
+                </h2>
+            </div>
+
+            <div class="relative w-[250px] h-[350px] rounded-lg overflow-hidden shrink-0 group">
+                <img src="https://static.vitra.com/media-resized/N6UVKCLycmMuxnSKVr-5Dy2bEKVn3vUiQCdqFAsVi68/fill/0/550/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0Lzg5ODUwNzIvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84Mjc1NjIyMi5qcGc.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-500 group-hover:bg-opacity-0"></div>
+                <h2 class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold transition-all duration-500 group-hover:bottom-4 group-hover:translate-y-[45%]">
+                   Café Table's
+                </h2>
+            </div>
+
+
+            <div class="relative w-[250px] h-[350px] rounded-lg overflow-hidden shrink-0 group">
+                <img src="https://static.vitra.com/media-resized/vF77hc2guKsYtEwnWEDR5OzC8wOixPX0Lk6R4EL3XIc/fill/0/550/ce/0/aHR0cHM6Ly9zdGF0aWMudml0cmEuY29tL21lZGlhL2Fzc2V0Lzg5ODQ5NTIvc3RvcmFnZS92X2Z1bGxibGVlZF8xNDQweC84Mjc1NjE3OS5qcGc.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-500 group-hover:bg-opacity-0"></div>
+                <h2 class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold transition-all duration-500 group-hover:bottom-4 group-hover:translate-y-[45%]">
+                   Conference Chairs
+                </h2>
+            </div>
+
+
+        </div>
+   </div>
+</section>
+
+<footer class="py-28">
+    <div class="w-64 flex mx-auto">
+        <a href="#"  class="social">
+            <img src="./fb.svg" alt="fb">
+        </a>
+    </div>
+</footer>
+
+<!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script> -->
+</body>
+</html>
