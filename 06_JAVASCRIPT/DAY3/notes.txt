@@ -1,0 +1,54 @@
+30/01/2025
+
+1) Assignment
+2) arithemtic +,-,*,/,%,**
+3) Relational Operators : > , >=  , <= , == , ===
+    Returns boolean values
+4) Logical Operators :
+    AND (&&)
+    OR  (||)
+    NOT (!)
+    Used mostly between Relational Operators
+    Returns boolean values
+
+    AND operator return true only in the event of all statements equating to true
+    OR Operator Return False only in the event that all expresssion equate to false
+    NOT Operator Negates the logic state
+5) Increment and Decrement Operators (++ , --)
+6) Shorthand Operators
+    assume x = x + y which can be shorthanded to x+= y
+7) Ternary
+    condition ? true statement : false statement
+
+Conditional Statements (decision making statements)
+---------------------------------------------------
+1) if else
+    syntax
+        if(condition){
+
+        }else{
+            //statements
+        }
+2) switch
+
+In js data can be inputted via the prompt method which uses a popup or we can collect user
+input from HTML input box
+
+31/01/2025
+Looping Statements
+    To do task repeatedly at particular position of programming file
+1) while loop
+        syntax:
+            variable initialization
+            while(condition){
+                statements;
+                exit condition/ increment|decrement operation
+            }
+2) for loop
+
+01/02/2025
+ we can convert string to number by Number() method
+
+parseInt(),Math.floor() ,removes decimal part of number
+
+break; keyword can forcefully break from the loop
