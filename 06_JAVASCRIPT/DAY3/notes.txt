@@ -52,3 +52,13 @@ Looping Statements
 parseInt(),Math.floor() ,removes decimal part of number
 
 break; keyword can forcefully break from the loop
+
+04/02/2025
+for loop
+syntax:  for(variable initialization ; condition ; increment/decrement){
+        // statements
+    }
+
+if we know the exact number of iterations beforehand we can prefer for loops,
+and we use while loop when we can't predetermine the iterations
+

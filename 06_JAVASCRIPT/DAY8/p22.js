@@ -11,7 +11,7 @@ while(temp <= 36){
     num++;
 }
 
-
+console.log('----------')
 //use break; keyword to break from forcefully from a loop
 pow = 2, num = 1
 while(num<=36){
