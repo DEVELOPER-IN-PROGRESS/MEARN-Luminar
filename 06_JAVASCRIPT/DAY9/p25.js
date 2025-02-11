@@ -1,5 +1,5 @@
 // w.a.p  to print prime numbers in a given range
-let start = 10 , end = 50;
+let start = 1 , end = 50;
 
 for(let i = start ; i <= end ;i++){
     flag = true;

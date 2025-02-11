@@ -62,3 +62,6 @@ syntax:  for(variable initialization ; condition ; increment/decrement){
 if we know the exact number of iterations beforehand we can prefer for loops,
 and we use while loop when we can't predetermine the iterations
 
+10/02/2025
+
+Pattern Printing - nested loop
