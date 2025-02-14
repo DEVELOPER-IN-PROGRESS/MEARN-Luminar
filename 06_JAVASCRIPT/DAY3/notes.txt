@@ -65,3 +65,71 @@ and we use while loop when we can't predetermine the iterations
 10/02/2025
 
 Pattern Printing - nested loop
+
+12/02/2025
+
+Functions()
+functions are set of instructions to do a certain operation multiple times based on condition
+function has two parts 1) function definition 2)  function call
+
+function function_name(arguments){
+    Statements
+}
+
+function call = function_name()
+
+13/02/2025
+
+Variables inside the function has only function scope and can't be accessed outisde function
+
+in order to access variables outside the function 'return' keyword is Used
+return should be the last statement inside  a function or statements after return stement won't be executed
+
+
+Arrow Functions
+from ES6 version arrow functions are preferred over arrow functions
+
+syntax:
+    const variable/function_name = () => { /*
+      statements */ }
+
+if there is only single line in function there is no need for {}
+and return is automatically done furthermore there is no need for return keyword explicitly
+
+arrow functions have no functional hoisting whereas normal functions have hoisting
+
+
+:: Callback Functions ::
+A function calling another function is called callback .
+Callback functions are passed as arguments to another function and is executed after the funtion completes its execution
+
+:: Predefined Funcuitons ::
+function that are already built into the language to make applications development
+easier
+egs: Math.floor(), console.log()
+
+:: Nested Function ::
+A function defined inside another function is called nested
+
+  Closure Property
+  Closure is the ability of variables inside parents function be accessible to child
+  function but the variable inside the child function not being accessible to the parent
+  function
+
+Synchronous and Asynchronous
+    Synchronous functions are functions which have no time delay
+    Asynchronous functions will have a time delay eg: setTimeout , API Fetching
+
+
+Data Structures
+- a specialized format/container for storing ,processsing , retrieving , organizing data
+eg: array , list , string , there
+
+Array:
+unlike variables an array can store data with 1 or more datatypes that are separatd by a comma
+and enclosed by  square brackets;
+format:  let arrayname = [];
+
+object stores data in key:value pairs all enclosed by curly brackets {}.
+
+

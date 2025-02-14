@@ -29,3 +29,16 @@ while(num1 != 1 || num2 != 1 ){
 
 console.log(`LCM = ${lcm}`)
 
+//optimized version
+num1 = 100
+num2 = 90
+i =1
+let maxNum = Math.max(num1,num2)
+while(true){
+    maxNum += Math.max(num1,num2)
+    console.log(i++)
+    if(!(maxNum%num1) && !(maxNum%num2)){
+        console.log(`LCM Of ${num1} and ${num2} = ${maxNum}`)
+        break;
+    }
+}
