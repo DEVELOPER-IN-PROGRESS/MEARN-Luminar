@@ -140,13 +140,16 @@ Array Operations
 3 unshift - add items to an array as first element
 4  pop - delete last element from an array
 5 shift - deletes frist item of an array
+5 sort  - arranges the array in either ascending or descending order
+            syntax:
+            arr.sort((a,b)=>a-b)  // ascending order
+            arr.sort((a,b)=>b-a)  // descending order
 
 access items from an array
 --------------------------
 1 for loop
 2 'in' operator  return indices of an array
 3 'of' operator return array items as such
-
  In javascript array is of infinite lengtrh as we don;t specify the length when we decalare
  an array
 
