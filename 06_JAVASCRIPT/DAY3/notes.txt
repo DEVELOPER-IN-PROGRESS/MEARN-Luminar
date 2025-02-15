@@ -132,4 +132,28 @@ format:  let arrayname = [];
 
 object stores data in key:value pairs all enclosed by curly brackets {}.
 
+Array Operations
+-----------------
 
+1 get - using index location
+2 add - push - appends new value to end of array
+3 unshift - add items to an array as first element
+4  pop - delete last element from an array
+5 shift - deletes frist item of an array
+
+access items from an array
+--------------------------
+1 for loop
+2 'in' operator  return indices of an array
+3 'of' operator return array items as such
+
+ In javascript array is of infinite lengtrh as we don;t specify the length when we decalare
+ an array
+
+
+
+TRUTHY Operator:
+If there is only an if block inside condition we can use the following syntax to executed
+condition &&  statement
+
+.git is also called staging area
