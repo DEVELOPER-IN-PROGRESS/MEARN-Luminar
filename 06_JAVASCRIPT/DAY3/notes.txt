@@ -140,12 +140,27 @@ Array Operations
 3 unshift - add items to an array as first element
 4  pop - delete last element from an array
 5 shift - deletes frist item of an array
-5 sort  - arranges the array in either ascending or descending order
+6 sort  - arranges the array in either ascending or descending order
             syntax:
             arr.sort((a,b)=>a-b)  // ascending order
             arr.sort((a,b)=>b-a)  // descending order
+7 flat() - reduce the dimension of array by 1 eg: 2d to 1D array
+         - flat(depth)  directly converts the array to whatever depth we want '
+         or it handles the level of change
+8 forEach() Used to access each item from an array . forEach will return new item rather than an array
+9 map() - similar to forEach method but it will return new processed array after processing each
+         element from an array
+10 reduce() reduce method returns only a single value from the given array
+        for eg: total sum , highest , lowest , average etc
+11 filter()
+12 find() return an element satisfying a particular condition
+13 some() to check the given condition is true or false
+14 splice(index,deleteCount)
+15 includes( )
+16 indexOf()
+17 slice() - to create a a subarray from an array ::
 
-access items from an array
+Array methods like forEach traverse till the end thereby break statement dosen't work in those methods
 --------------------------
 1 for loop
 2 'in' operator  return indices of an array
@@ -154,9 +169,20 @@ access items from an array
  an array
 
 
-
 TRUTHY Operator:
 If there is only an if block inside condition we can use the following syntax to executed
 condition &&  statement
 
 .git is also called staging area
+
+Nested Array - when array is  inside another array
+
+::STRING::
+strings are a sequence of characters
+startsWith
+
+""OBJECT""
+1) add -
+   objectname['key']= value
+2)
+
