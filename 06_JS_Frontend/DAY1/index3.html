@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Clock</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .grid{
+            width: 95vw;
+            height: 95vh;
+            margin: 0 auto;
+            display: grid;
+            place-items: center;
+        }
+
+        #clock{
+            color: greenyellow;
+        }
+
+        h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10vw;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <!-- <h1>24: 00 : 00</h1> -->
+        <h1 id="clock"></h1>
+
+    </div>
+
+<script>
+    // let date = new Date();
+    // console.log(date);
+    let time = document.getElementById('clock')
+    console.log(time)
+
+setInterval( ()=>{
+        let x = new Date().toLocaleTimeString();
+        time.innerHTML = x;
+        console.log(x)
+    },1000)
+
+
+
+    function date(){
+        const live_time = new Date();
+        console.log(live_time)
+
+        let hour = live_time.getHours();
+        // console.log(hour)
+
+        let minutes = live_time.getMinutes();
+
+        let seconds = live_time.getSeconds();
+
+        console.log(hour,minutes,seconds)
+
+        time.innerHTML = `${hour}:${minutes}:${seconds}`
+
+    }
+
+    date()
+</script>
+</body>
+</html>

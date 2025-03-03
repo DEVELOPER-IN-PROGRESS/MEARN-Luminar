@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid{
+            display: grid;
+            place-items: center;
+            gap: 5px;
+            margin-top: 50px;
+            border:  3px solid darkblue;
+            border-radius: 5px ;
+            width: 40vw;
+            padding:20px;
+            margin: 0 auto;
+        }
+
+        #error{
+            display: none;
+            color: white;
+            background-color: red;
+            padding: 10px;
+        }
+
+        #age{
+            height: 40px;
+            /* border-radius: 20px; */
+            box-shadow: none;
+            outline: none;
+            background-color: transparent;
+            border: 1px solid black;
+        }
+
+        .check{
+            margin-top: 10px;
+            background-color: brown;
+            color: white;
+            padding: 10px;
+            outline: 0;
+            border: 1px solid white;
+            border-radius: 20px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- input box ,
+        button
+        check if age has voting eligibility
+    -->
+    <div class="grid">
+        <h2 style="margin: 0px;margin-bottom: 10px;">Check your voting eligibility</h2>
+        <p id="error"></p>
+        <input type="number" placeholder="Enter your age" id="age"/>
+        <button class="check" onclick="check_age()">Check Eligibility</button>
+    </div>
+
+
+<script>
+
+
+</script>
+<script src="./p2.js"></script>
+</body>
+</html>

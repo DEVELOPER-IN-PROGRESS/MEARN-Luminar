@@ -1,0 +1,28 @@
+body{
+    background-color: #103a48;
+}
+
+.container{
+    display:grid;
+    place-items: center;
+}
+
+.calculator-body{
+    width: 30vw;
+}
+
+.calculator-body table{
+    width: 100%;
+    border: 1px solid white;
+}
+
+.calculator-body table tr{
+    border: px solid black;
+}
+
+td{
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    height: 10px;
+}

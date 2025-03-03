@@ -160,6 +160,8 @@ Array Operations
 16 indexOf()
 17 slice() - to create a a subarray from an array ::
 
+spread operator - represented by '...'  which is used to join two arrays
+
 Array methods like forEach traverse till the end thereby break statement dosen't work in those methods
 --------------------------
 1 for loop
@@ -186,3 +188,10 @@ startsWith
    objectname['key']= value
 2)
 
+Procedural programming
+unlike OOPS procedural programming considers data and methods as different
+entities
+
+O.O.P.S
+
+JavaScript In Frontend 

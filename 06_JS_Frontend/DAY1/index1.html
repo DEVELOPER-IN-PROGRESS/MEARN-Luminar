@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic DOM Manipulation</title>
+    <style>
+        h1{
+            color: purple;
+            font-size: 30px;
+        }
+
+        button{
+            border: none;
+            box-shadow: none;
+            padding: 10px 20px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="troop">DOM</h1>
+    <p class="troop">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, eligendi natus architecto eaque nemo quae tempore ratione recusandae sed, veritatis unde repudiandae saepe a quo officiis debitis sapiente pariatur illum?
+    </p>
+
+    <h2 id="t-center">Milky way</h2>
+
+    <ul class="shop">
+        today's Shopping List
+        <li class="item">Onion</li>
+        <li class="item">Beetroot</li>
+        <li class="item">Pomogranate</li>
+        <li class="item">orange</li>
+    </ul>
+
+    <button id="change" onclick="content_change()">Click Me</button>
+    <script>
+        function content_change(){
+            let h1 = document.getElementsByTagName('h1');
+            //console.log(h1[0]) // returns HTMLCollections a.k.a array
+            h1[0].innerHTML = 'Document Object Model'
+            // h1[0].style.fontSize = '60px';
+
+            // Class selector
+            contents = document.getElementsByClassName('troop');
+            contents[0].style.color = 'magenta'
+            contents[1].style.opacity = 0.6;
+            contents[1].style.backgroundColor = 'red';
+
+            //id Selector
+            let h2 = document.getElementById('t-center')
+            console.log(h2)
+            h2.style.textAlign = 'center';
+
+            setTimeout( ()=>{},3000 );
+            // query selector - return the first element for the given CSS query
+            document.querySelector(`#t-center`).style.textAlign = 'right';
+            document.querySelector(`#t-center`).style.color = 'green';
+
+            //querySelectorAll - return nodelist of all matched queries of Css elements
+            setTimeout( ()=>{},5000 );
+            document.querySelectorAll()
+
+        }
+    </script>
+</body>
+</html>
