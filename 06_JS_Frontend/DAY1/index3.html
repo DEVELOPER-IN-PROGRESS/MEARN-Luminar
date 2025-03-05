@@ -40,14 +40,13 @@
     let time = document.getElementById('clock')
     console.log(time)
 
-setInterval( ()=>{
-        let x = new Date().toLocaleTimeString();
-        time.innerHTML = x;
-        console.log(x)
-    },1000)
+    // setInterval( ()=>{
+    //     let x = new Date().toLocaleTimeString();
+    //     time.innerHTML = x;
+    //     console.log(x)
+    // },1000)
 
-
-
+//method 2 settimeout
     function date(){
         const live_time = new Date();
         console.log(live_time)
@@ -63,6 +62,8 @@ setInterval( ()=>{
 
         time.innerHTML = `${hour}:${minutes}:${seconds}`
 
+        setTimeout( date,1000)
+        
     }
 
     date()

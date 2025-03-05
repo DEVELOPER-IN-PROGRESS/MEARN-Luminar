@@ -12,39 +12,67 @@
         <div class="calculator-body">
             <table class="js-table">
                 <tr>
-                    <td colspan="3"></td>
-                    <td></td>
+                    <td colspan="3">
+                        <div id="output"></div>
+                    </td>
+                    <td>
+                        <button class="num" onclick="purge()">AC</button>
+                    </td>
                 </tr>
                 <tr>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>/</td>
+                    <td><button class="num" onclick="display(7)">7</button></td>
+                    <td><button class="num" onclick="display(8)">8</button></td>
+                    <td><button class="num" onclick="display(9)">9</button></td>
+                    <td><button class="num" onclick="display('/')">/</button></td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>x</td>
+                    <td><button class="num" onclick="display(4)">4</button></td>
+                    <td><button class="num" onclick="display(5)">5</button></td>
+                    <td><button class="num" onclick="display(7)">6</button></td>
+                    <td><button class="num" onclick="display('*')">x</button></td>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>-</td>
+                    <td><button class="num" onclick="display(1)">1</button></td>
+                    <td><button class="num" onclick="display(2)">2</button></td>
+                    <td><button class="num" onclick="display(3)">3</button></td>
+                    <td><button class="num" onclick="display('-')">-</button></td>
                 </tr>
                 <tr>
-                    <td>0</td>
-                    <td>.</td>
-                    <td>=</td>
-                    <td>+</td>
+                    <td><button class="num" onclick="display(0)" >0</button></td>
+                    <td><button class="num" onclick="display('.')">.</button></td>
+                    <td><button class="num" onclick="evaluate_exp()" >=</button></td>
+                    <td><button class="num" onclick="display('+')">+</button></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><button class="num" onclick="remove_last()"><</button></td>
                     <td colspan="3"></td>
                 </tr>
             </table>
         </div>
+
+        <div class="calculator-body">
+            <div class="js-table">
+                <div id="output">
+
+                </div>
+                <div class="button-grid">
+                    <div class="row1">
+                        <button class="operation">AC</button>
+                        <button class="operation">C</button>
+                        <button class="operation">%</button>
+                        <button class="operation">/</button>
+                    </div>
+                    <div class="row-2">
+                        <button class="number"></button>
+                        <button class="number"></button>
+                        <button class="number"></button>
+                        <button class="number"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+<script src="./script.js"></script>
 </body>
 </html>

@@ -194,4 +194,19 @@ entities
 
 O.O.P.S
 
-JavaScript In Frontend 
+JavaScript In Frontend
+
+DATABASES:
+- Used to Store Data
+- large amount of data can be stores
+
+- Browser Local Storage (limited storage)
+    - local storage - permanently stored
+    - session storage - temporary storage (data lost when tab is closed)
+
+Operations
+1) add - setItem("key","data or value") .
+    to convert data into string we can use JSON.stringify()
+2) retrieve - getItem("key")
+    to convert the string data into actual data we use JSON.parse(<data>)
+3) delete an item  - removeItem("key")
