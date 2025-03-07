@@ -1,0 +1,6 @@
+#table-content tr{
+    border: 1px solid #101010;
+}
+#table-content tr td{
+    border-right: 1px solid #101010;
+}

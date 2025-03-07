@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    .userid{
+        width: 50px;
+        height: 50px;
+    }
+
+    .albumcard{
+        border-radius: 20px;
+        background: linear-gradient(#e66465, #9198e5);
+    }
+
+    .album-name{
+        /* height: 100px; */
+    }
+
+    @media (min-width:768px) {
+        .album-name{
+            /* max-height: 600px; */
+        }
+    }
+</style>
+</head>
+<body class="bg-info">
+
+<div class="container-fluid my-5">
+    <h1 class="text-center fs-2 fst-italic my-4">Top Albums 2024-2025</h1>
+    <div class="row justify-content-center" id="albumdata">
+        <!-- <div class="col-sm-6 col-md-3 mx-1 my-2 text-center albumcard">
+
+            <div class="userid  rounded-circle border text-dark border-light mt-2 border-2 border-dashed d-flex align-items-center justify-content-center mx-auto fw-bold">
+                1
+            </div>
+            <div class="album-name py-2 text-light fw-bold fs-4">
+             heyyy
+            </div>
+        </div>-->
+
+    </div>
+</div>
+
+
+<script>
+
+const album = fetch(`https://jsonplaceholder.typicode.com/albums`)
+            .then(response => response.json())
+            .then( data => data.forEach( album => {
+                albumdata.innerHTML +=
+                `
+                <div class="col-sm-6 col-md-3 mx-1 my-2 text-center albumcard">
+                    <div class="userid  rounded-circle border text-dark border-light mt-2 border-2 border-dashed d-flex align-items-center justify-content-center mx-auto fw-bold">
+                        ${album.id}
+                    </div>
+                    <div class="album-name py-2 text-light fw-bold fs-6">
+                        ${album.title}
+                    </div>
+                </div>
+                `;
+            }))
+            .catch( err => {
+                albumdata.innerHTML +=  `<p class="text-danger text-center fs-3"> Failed to Fetch data please reload... </p>`
+            } )
+
+</script>
+</body>
+</html>
