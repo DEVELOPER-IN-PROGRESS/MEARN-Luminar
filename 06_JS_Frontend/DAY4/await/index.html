@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    body{
+        background: url('https://wallpapers.com/images/high/dark-space-wallpaper-hofrmwhiojw4ozz2.webp');
+        background-size: cover;
+        height: 100vh;
+        background-size: cover;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="text-center text-light py-4 fw-bold">Know about country</h1>
+
+    <div class="d-flex align-items-center justify-content-center">
+        <button class="btn-danger text-light border-0 py-2">clear</button>
+        <input placeholder="Enter country"  id="searchbox" class="ps-2 py-2 text-light form-control bg-transparent h-100" />
+        <button type="button" class="btn btn-success text-white py-2" onclick="fetch_data()">Search</button>
+    </div>
+
+    <div id="maindata">
+
+    </div>
+
+</div>
+
+<script>
+  const fetch_data = async() => {
+        let country_name = searchbox.value;
+        let data = await fetch(`https://restcountries.com/v3.1/name/${country_name}?fullText=true`)
+                        .then( response => response.json())
+                        // .then( data => console.log(data[0]))
+                        .catch( err => err)
+
+        let country = data[0];
+
+        if(country){
+
+            console.log(country)
+        // debugger
+        let l  = country.languages ;
+        console.log({l})
+
+        let languages = []
+        for(let lang in l){
+            languages.push(l[lang]) // languages.push(l.value)
+        }
+
+                maindata.innerHTML = `
+                <div class="card mx-auto my-5" style="width: 40rem;">
+                    <img src="${country.flags.png}" class="card-img-top" alt="Flag of ${country.name.common}">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">${country.name.common}</h5>
+                        <h6 class="card-text ${!country.official?'d-none':''}">Official Name ${country.official}</h6>
+                        <p class="card-text">Capital: ${country.capital[0]} </p>
+                        <p class="card-text">Region: ${country.region} </p>
+                        <p class="card-text">Languages : ${languages.join(',')} </p>
+                        <p class="card-text">Borders: ${country.borders.join(',')} </p>
+                        <p class="card-text">Locator :
+                           <a href="${country.maps.googleMaps}" target="_blank">click me</a>
+                        </p>
+                        <p class="card-text">Population : ${country.population} people </p>
+                        <p class="card-text"> Land Area:  ${country.area} m<sup>2</sup> </p>
+                        <p class="card-text"> TimeZone(s):  ${country.timezones.join(',')} </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            `
+        }
+
+    }
+</script>
+</body>
+</html>
+
+<!-- common
+ official name
+ currency
+ capital
+ region
+ languages
+ borders
+ google maps
+ area
+ population
+ timezone
+ flags[png]
+ -->
+

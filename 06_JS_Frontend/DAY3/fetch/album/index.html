@@ -18,15 +18,15 @@
         background: linear-gradient(#e66465, #9198e5);
     }
 
-    .album-name{
-        /* height: 100px; */
+    /* .album-name{
+        height: 100px;
     }
 
     @media (min-width:768px) {
         .album-name{
-            /* max-height: 600px; */
+            max-height: 600px;
         }
-    }
+    } */
 </style>
 </head>
 <body class="bg-info">
@@ -55,7 +55,7 @@ const album = fetch(`https://jsonplaceholder.typicode.com/albums`)
             .then( data => data.forEach( album => {
                 albumdata.innerHTML +=
                 `
-                <div class="col-sm-6 col-md-3 mx-1 my-2 text-center albumcard">
+                <div class="col-sm-6 col-md-3 mx-1 my-2 text-center albumcard ">
                     <div class="userid  rounded-circle border text-dark border-light mt-2 border-2 border-dashed d-flex align-items-center justify-content-center mx-auto fw-bold">
                         ${album.id}
                     </div>
