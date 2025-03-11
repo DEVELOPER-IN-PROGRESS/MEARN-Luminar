@@ -29,7 +29,6 @@
     </div>
 
     <div id="maindata">
-
     </div>
 
 </div>
@@ -39,61 +38,53 @@
         let country_name = searchbox.value;
         let data = await fetch(`https://restcountries.com/v3.1/name/${country_name}?fullText=true`)
                         .then( response => response.json())
-                        // .then( data => console.log(data[0]))
                         .catch( err => err)
 
-        let country = data[0];
+            try{
+                let country = data[0];
+                console.log(country)
 
-        if(country){
+                let langs  = country.languages ;
+                let languages = ``
 
-            console.log(country)
-        // debugger
-        let l  = country.languages ;
-        console.log({l})
+                Object.keys(langs).forEach( key => languages += `${langs[key]}, ` )
+                languages = languages.slice(0,-2);
 
-        let languages = []
-        for(let lang in l){
-            languages.push(l[lang]) // languages.push(l.value)
-        }
+                let c = country.currencies;
+                let currencies  = ``;
+                Object.keys(c).forEach( key => currencies +=  `${c[key].name}(${c[key].symbol}), `)
+                currencies = currencies.slice(0,-2);
 
                 maindata.innerHTML = `
-                <div class="card mx-auto my-5" style="width: 40rem;">
+                <div class="card mx-auto my-5" style="width: 40vw;">
                     <img src="${country.flags.png}" class="card-img-top" alt="Flag of ${country.name.common}">
                     <div class="card-body">
                         <h5 class="card-title text-center">${country.name.common}</h5>
                         <h6 class="card-text ${!country.official?'d-none':''}">Official Name ${country.official}</h6>
                         <p class="card-text">Capital: ${country.capital[0]} </p>
                         <p class="card-text">Region: ${country.region} </p>
-                        <p class="card-text">Languages : ${languages.join(',')} </p>
-                        <p class="card-text">Borders: ${country.borders.join(',')} </p>
+                        <p class="card-text">Continent: ${country.continents[0]} </p>
+                        <p class="card-text">Languages : ${languages} </p>
+                        <p class="card-text">Currencies : ${currencies} </p>
+                        <p class="card-text">Borders: ${country.borders.join(', ')} </p>
                         <p class="card-text">Locator :
-                           <a href="${country.maps.googleMaps}" target="_blank">click me</a>
+                        <a href="${country.maps.googleMaps}" target="_blank">${country.maps.googleMaps}</a>
                         </p>
                         <p class="card-text">Population : ${country.population} people </p>
                         <p class="card-text"> Land Area:  ${country.area} m<sup>2</sup> </p>
-                        <p class="card-text"> TimeZone(s):  ${country.timezones.join(',')} </p>
+                        <p class="card-text"> TimeZone(s):  ${country.timezones.join(', ')} </p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-            `
+                `;
+        }catch(err){
+            console.error(err);
+            maindata.innerHTML  = `<h2 class="mt-5 text-light text-center">Requested data is not available at the moment <br> Kindly  enter a valid name</h2>`;
+            setTimeout( ()=> {searchbox.value = ``; maindata.innerHTML = ``;},4000);
         }
-
     }
 </script>
 </body>
 </html>
 
-<!-- common
- official name
- currency
- capital
- region
- languages
- borders
- google maps
- area
- population
- timezone
- flags[png]
- -->
 
