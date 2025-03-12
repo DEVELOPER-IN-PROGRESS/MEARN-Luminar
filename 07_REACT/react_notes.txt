@@ -1,0 +1,37 @@
+REACT
+------
+
+
+
+
+steps to create a react application
+-- new project npx create-react-app  project-name  (CRA is depricated)
+npm create vite@latest <project-name>
+cd <project-name>
+npm install
+script file edit - to change the displayed content (optional)
+npm run dev - to run the application
+
+files
+-----
+1) README.md - document information for the project/application
+2) package.json - hold the npm configuration - dependencies - holds the names of the packages  installed to the application
+3) package-lock.json - holds the version and some important informations regarding the installed libraries
+4) node_modules - contains the copy of the installed libraries
+5) .gitignore - contains the list of data which  needn't be tracked  or which need not be pushed to the remote repo
+
+7) eslint.config.js - linting refers to the process of analyzing code to find and fix and avoid potential errors
+8) index.html - since react is a single page application it contains only a single html file
+9) main.js app root component
+10) App.jsx contains root component of our application
+11) index.css - contains the styles that affect our application globally
+12) app.css  styles applied to the app components
+
+component :: basic unit of react UI
+------
+export -    export default component name
+import  - import defautl component name
+<component-name/>
+js code should be placed above the return function call
+html code should be placed inside the return function
+
