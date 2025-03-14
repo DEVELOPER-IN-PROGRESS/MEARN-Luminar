@@ -3,8 +3,12 @@ import { useState } from 'react';
 import modStyle from './assets/customStyle.module.css';
 import Prestige from './Prestige';
 import Basic from './Basic';
+import Comp3 from './Comp3';
 
 function App() {
+  let t1 = `The first part is called The "Pledge" `;
+  let t2 = `The second  part is called The "Turn" `;
+  let t3 = `The Third part is called as "Prestige"`
   let text = `This is my String`;
   let bool = true;
   let greet = '';
@@ -51,9 +55,9 @@ function App() {
 
       <p style={{ textAlign:'center'}}> Hello <span id="greet">{name}  </span></p>
 
-      <Prestige />
-      <Basic/>
-
+      <Prestige part={t1} />
+      <Basic part={t2} year={1890}  />
+      <Comp3 part={t3}  time={'13:00'} />
     </>
   )
 }
