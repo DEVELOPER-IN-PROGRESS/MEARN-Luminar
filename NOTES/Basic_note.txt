@@ -1,0 +1,362 @@
+  Web Application
+  ---------------
+  - collections of pages .
+
+
+  - mearn -  mongodb , express , angular , react , node 
+
+  - fullstack -  frontend 
+              -  backend
+
+
+frontend - userInterface.
+         -  angular react 
+         -  html , css , bootstrap , javaScript
+            - html - content 
+            - css - to style content
+            - bootstrap -  framework to style the html pages
+            - javaScript - behaviour
+
+Backend - server - logical operation - javaScript - express , node 
+        - database - store data  - mongodb
+
+------------------------------------------------------------------------
+HTML 
+----
+
+- Hypertext markup language
+- to create a structure to web application  -  content 
+   eg;html , xml , sgml etc ...
+
+- tag based language .
+- tag <tagname> 
+- types 
+   - opening tag - <tagname>
+   - closing tag - </tagname>
+   - self closing tag - <tagname/> - void element 
+
+- Basic structure 
+  ---------------
+ <html> 
+ <head>
+ <title>title of the web application</title>
+ </head>
+ <body>
+  content
+ </body>
+ </html>
+
+
+ sematic tags
+ ------------
+ - used make the website more optimised 
+ - <header></header>
+ - <footer><footer>
+ - <aside></aside>
+ - <main></main> 
+
+
+ //code editor - vs code ,sublime, 
+ space_bar -  
+
+ html - filename.html
+
+
+ html:5 - latest version of html
+
+ - difference
+ --------------
+ 1) have doctype tag
+ 2) specfied language
+ 3) have meta tag inside the head tag .
+
+ ways to load basic structure of html:5
+ --------------------------------------
+ 1) use ! 
+ 2) choose html:5
+
+
+ different types tags 
+ --------------------
+ 1) h - heading 
+   h1 - h6 - difference lies in the font size.
+ 2) p - paragraphs 
+ 3) a - link  
+ 4) img - images   
+ 5) br - break the line 
+
+
+
+ attribute - it provides additions features/information to a given tag .
+ eg:href , target , src alt 
+  width , height 
+
+
+ block level element - starts from new line .
+    eg:h , p
+ inline element - starts in same line .
+   eg: img a 
+
+
+
+update of html :5
+---------------------
+- 1) video tag 
+- 2) audio 
+- 3) fig 
+- 4) iframes 
+- 5) placeholder
+- 6) Article 
+- 7) section 
+- 8) nav 
+
+
+
+list 
+---
+1) ordered list - ol - li 
+2) unordered list - ul  - li
+
+TABLE 
+-----
+
+<table>
+<thead> ---- heading  
+ <tr>----- rows 
+    <th></th>
+ </tr>
+</thead>
+<tbody> - content
+  <tr>
+   <td> </td>
+  </tr>
+</tbody>
+</table> 
+
+
+form 
+-----
+<form>
+  input - to get data from the user 
+</form> 
+
+types 
+- text 
+- password
+- email 
+- file 
+- number 
+- date 
+- checkbox
+- radio 
+
+- textarea 
+- select - drop down  - option 
+- button 
+
+
+css 
+---
+Cascading style sheet 
+-----------------------
+- To provide style to the content / html tags .
+- there three ways of using css properties 
+  1) inline css 
+     - style attribute 
+   - syntax
+    -------
+    style="property:value;"
+    
+  2) internal css 
+     - create style tag inside head tag 
+     - syntax
+        selector{
+          property:value
+        }
+     - selectors are used to identify the elements for styling
+     - there are different type of selectors 
+        - 1)  tagname selector
+        - 2)  id selector  - symbol - (#)
+        - 3) class selectors - group - symbol - (.)
+        - 4) universal selector - symbol(*) - apply to entire html document 
+
+
+  3) external css
+
+  - create an external file with extension as .css 
+  - syntax 
+     selector{
+      property:value;
+     }
+  - connect the css file with the html file using link tag  in head tag    
+
+  rel  - relation 
+
+
+  external - reuse 
+           - reduces complexity and loading time 
+   external>internal>inline 
+
+
+   priority 
+   inline>internal>external   
+
+
+   css box model 
+   -------------
+   components of box model 
+   - border  - line around the element - it invisible by default 
+   - margin  - it is the gap between border and outer space / element
+   - padding  - it is gap between border and content 
+
+   border - property - border - width , type, color 
+
+   types border
+   ------------
+   1) solid
+   2) dotted     
+   3) dashed 
+   4) double
+   5) groove
+   6) ridge
+   7) inset
+   8) outset
+
+   margin -
+   -----
+    margin 
+
+    padding
+
+
+  div tag - two create divisions in web pages .  
+
+
+  Pseudo class 
+  ------------
+  - it defines special state of an element 
+  - eg : hover active link  visited etc ...
+  - syntax
+  --------
+  selector:pseudo_class{
+   property:value 
+  }
+
+
+Pseudo element
+--------------
+- allows you to style certain parts of an element 
+- symbol (::)
+- after , before , first-letter , first-line, marker , selctions...
+- syntax
+--------
+selector::pesudoelemt{
+   property:value 
+}
+
+
+css grid system 
+---------------
+- columns and rows 
+- display :grid 
+- grid-template-column - column 
+- grid-template-rows - rows
+
+
+Linear gradient - to provide color combinations 
+
+syntax
+------
+background-Image: linear-gradient(to direction , color1.....,colorn)
+
+
+css - Animation
+---------------
+
+syntax 
+------
+selector{
+   animation:Aname , time;
+}
+
+define animation
+@keyframes Aname{
+    0%{
+        property:value
+    }
+    .
+    .
+    100%{
+      property:value
+    }
+}
+
+media Query 
+-----------
+- used to provide different styles to an element in different media/devices 
+
+
+syntax 
+-----
+@media(expression){
+   selector{
+      property:value 
+   }
+}
+
+devices breakpoints 
+-------------------
+
+extra small <=600px
+small device 600px - 768px
+medium device  768px - 992px
+large device - 992 - 1200px 
+extra device - >=1200px
+
+
+z-index 
+-------
+- represents the stack order of html element in the browser .
+- elements with highest z-index will be placed at the top of the stack .
+- only applicable to elements having position property .
+- if the elements is having same index value - the last written will be in the top .
+
+
+css variables 
+-------------
+- variable are used to store data 
+- represnted by  --variablename
+- based on scope variables can be divided into 
+  1) global variables  - can be used throughout the program
+       selector - :root{}
+  2) local variables - access is limited (block level)
+
+
+
+BOOTSTRAP 
+---------
+
+- Popular frontend framework of html css and javaScript 
+- framework - have its own limitation and advantage - easy to build user Friendly applications
+
+- features 
+  --------
+     - predefined class .
+     - prestyled components .
+     - these components can be customized.
+     - responsive web application using grid system .
+     - javaScript plugins for interative features .
+
+
+- can access to our application in two differents 
+1) cdn 
+2) download 
+
+
+grid system
+------------
+
+.container / .container-fluid 
+.row 
+.col - each column 2will have 12 basic  column 
+

@@ -1,0 +1,773 @@
+
+
+ ------------------------------MODULE II--------------------------------------- 
+
+
+---------- javaScript -----------
+
+features 
+--------
+ - Js is a scripting language 
+ - js can be used in both frontend as well as backend (node.js Environment) 
+ - js - behaviour -  frontend 
+      - logical operation - backend 
+ - it supports both procedural programming paradigm and object oriented programming (oops) 
+ - Dynamically styled language - data type - change
+ - extension - .js 
+- single thread programming language - line by line execution
+
+-----------------------------------------------------------------------------------------------------------------
+
+difference between scripting and programing languages 
+-----------------------------------------------------
+
+Scripting Languages:
+---------------------
+Typically high-level, interpreted, and used for automating tasks, manipulating data, or controlling applications. They may not require explicit compilation and often focus on ease of use and rapid development.
+
+Programming Languages:
+----------------------
+Generally lower-level languages (like C, C++, or Java) that require compilation and are used to develop full-fledged applications or systems. These languages often provide more control over hardware and performance.
+
+
+-----------------------------------------------------------------------------------------------------------------
+ECMAScript
+-----------
+
+ECMAScript is the standard specification for scripting languages, which serves as the foundation for languages like JavaScript, JScript, and ActionScript. It is maintained by a group called ECMA International through the Technical Committee 39 (TC39). The specification defines the core features, syntax, and behavior that programming languages should adhere to in order to be compatible with ECMAScript.
+
+-----------------------------------------------------------------------------------------------------------------
+
+Types of programing Paradigm 
+-----------------------------
+1) procedural programming paradigm
+2) Object orientent programing paradigm 
+
+
+procedural programming paradigm
+-------------------------------
+Unlike oops procedural consider data and methods as two different entities  and follows step by step computation.
+
+ Display 
+ ------
+ - console.log(content)
+--------------------------------------------------
+
+
+ DataTypes in js 
+ ---------------
+ - generally there are two datatypes 
+
+ 1) primitive dataType  - immutable dataType - 
+
+     1) string  - represents sequence of character enclosed single quotes or double qoutes 
+     2) number - represents both integer and floating point numbers 
+     3) Boolean - represents logical value ( true , false) 
+     4) BigInt - represents larger number which comes outside the limit of number dataType
+     5) Null - represents intensional absence of value 
+     6) undefined - variable is declared by value is not assigned
+     7) symbol - generate unique identifiers 
+               - symbol()
+               - basically used in creating libraries and modules based on js 
+
+ 2) non primitive datatypes - mutable 
+     8) object - represented using key:value pairs 
+         eg : object , array , function 
+  
+- typeof() - predefined method to check the dataType of a variable .
+
+--------------------------------------------------------------------------------------------------------------
+
+Variable 
+--------
+- used to store data  
+- identifiers - rules to create a variable 
+  -----------
+
+    - 1) varaible name can have letter , digits , underscore etc ...
+    - 2) name should not starts with digit 
+    - 3) no space between two words of a varaible name 
+           carName  , CARname car_name carName 
+
+    syntax 
+    -----
+    variablename = value 
+    keyword varaible = value        
+
+
+    keywords - reserved words - which provides certains meanings to the variable 
+    ---------
+
+    - const - reassigning is not possible , hoisting is not possible
+    - var - reassigning possible , Hoisting possible - not block level
+    - let - reassigning possible , hoisting not possible , block level scope
+
+------------------------------------------------------------------------------------------------------------------
+    Hoisting 
+    -------
+    - using a varaible before it is created   
+
+------------------------------------------------------------------------------------------------------------------    
+    Concatenation 
+    -------------
+    appending of one or more datatypes(addition)
+
+------------------------------------------------------------------------------------------------------------------    
+    template literals 
+    ------------------
+
+    - way of display content 
+    console.log(variablename)
+    `text ${varaiblename}`
+
+------------------------------------------------------------------------------------------------------------------    
+
+    operators 
+    ---------
+    1) Assignment (=)
+
+    2) Arithematic operator  
+        addition (+)
+        substraction(-)
+        multiplication(*)
+        division(/) - quotient
+        modules(%) - remainder 
+        expontiential (**) - power 
+
+    3) relational operators 
+      > >= < <= ==(check only the value ) === (check both value ae well as dataType)
+      - it returns boolean value (true or false)    
+
+    4) logical operators 
+    -  - it returns boolean value (true or false) 
+
+        AND (&&)
+
+         T && T = T 
+         T && F = F 
+         F && T = F 
+         F && F = F
+
+        OR (||)
+             T || T = T 
+             T || F = T
+             F || T = T 
+             F || F = F
+
+        NOT (!)  
+          !T= F 
+          !F =T
+
+     5) Increment (++) and decrement (--)
+
+     6) shorthand operators 
+              x = x+y => x+=y
+
+     7) ternary operators 
+             condition? true:false
+
+     8) Truthy opertor 
+             condition && true statement
+
+     9) spread operator (...)
+        - merge array
+
+     10) rest operator  (...)      
+            - retrun array of arguments 
+
+------------------------------------------------------------------------------------------------------------------    
+
+
+  conditional statements / decision making statements
+  ----------------------------------------------------   
+  - They enable the program to execute different blocks of code depending on whether a condition evaluates to true or false.
+
+  1) if else 
+     -------
+        syntax 
+        ------
+          if(condition){
+            statement
+          }
+          else if(condition){
+            statement
+          }
+          else{
+            statement
+          }
+
+  2) switch (expression) {
+      case value1:
+        // code to be executed if the expression equals value1
+        break;
+      case value2:
+        // code to be executed if the expression equals value2
+        break;
+      default:
+        // code to be executed if the expression doesn't match any case
+    }    
+    
+        
+------------------------------------------------------------------------------------------------------------------    
+
+Looping statements : 
+------------------
+-  to do a task repeatedly at a particular position of a programing file
+
+1) while loop 
+   
+   - The while loop is used when you want to repeat a block of code an unknown number of times, but as long as a condition is true.
+     
+     syntax 
+     ------
+     variable initialization
+
+     while(condition){
+      statement
+      exit condition / increment or decrement
+     }
+
+     
+2) for loop 
+
+   - The for loop is used when you know in advance how many times you want to execute a statement or a block of statements.
+   
+    syntax 
+    ------
+    for(variable initialization ; condition ; increment/decrement-exit){
+      statement
+    }
+
+------------------------------------------------------------------------------------------------------------------    
+
+nested looping 
+----------------
+- loops that are placed inside another loop. 
+   eg : pattern printing  
+
+------------------------------------------------------------------------------------------------------------------    
+
+
+Functions 
+---------
+- to do a certain task repeated at different location of the programing file .
+
+- function have two parts 
+  1) function definition
+  2) function call 
+
+Different way of representing/ defining a function 
+--------------------------------------------------
+1) Regular function 
+2) Arrow function 
+
+Regular function 
+----------------
+- Initial way of defining a function 
+
+syntax 
+------
+function functionname(arg/parameter){
+   statement 
+}
+
+functionname(parameter)
+
+- variables inside a function is having functional scope - can access only inside the function.
+- return - inorder to access variable outside the function 
+- statements after the return statement will not execute
+
+difference between arguments and parameters 
+--------------------------------------------
+Parameter : Variables in a function declaration/definition.
+Arguments : Actual values passed to the function when it is called.
+
+
+Arrow function 
+----------------
+ - ES6 - version onwords - arrow function is prefered .
+ - syntax 
+   ------
+   const variablename = ()=> {statement}
+
+   variablename() 
+
+ - Advantages
+   ---------
+   - Arrow functions have a shorter, more concise syntax compared to traditional function expressions. This makes the code cleaner, especially for simple functions.
+   - In an arrow function, if the function body consists of a single expression, the result of that expression is automatically returned. You don't need to explicitly use the return keyword.
+   - More readable code in scenarios like array operations and functional programming.
+
+
+Functional Hoisting 
+-------------------
+ -  function declarations are moved (or "hoisted") to the top of their containing scope during the compilation phase, before the code is actually executed. This means that you can call a function before it is defined in the code, as long as it’s a function declaration (not a function expression).
+  - Regular function - functional hoisting 
+  - Arrow Function - no Functional hoisting 
+
+Types of Functions 
+-------------------
+
+  1) callback functions 
+     -------------------
+    - function calling another function 
+    - callback functions are passed as arguments to another function and is executed after the function completes its execution 
+
+
+ 2) Predefined functions 
+    --------------------
+    - also known as built-in functions
+    - functions that are provided by the JavaScript environment (the browser or Node.js) and are available for use without needing to define them yourself.
+    eg: parseInt , math.floor , console.log , Number , String, typeOf(), eval()
+
+
+  3) nested function 
+     ---------------
+    - function defined inside another function 
+    - closure property :
+         - varaible inside the parent function can be accessed inside the child function but the variable inside the child function cannot be accessed inside the parent function .
+
+
+  4) Synchronous and Asynchronous 
+     -----------------------------
+    - synchronous function - functions without any time delay 
+    - Asynchronous function - functions with time delay -  eg : Api  , setTimeOut()
+
+------------------------------------------------------------------------------------------------------------------    
+
+ DataStructure 
+ -------------
+ - A specialised formate for  organizing , processing retrieving and storing data.
+ - eg : Array , stack , queue , list , Linkedlist 
+
+ Array 
+ -----
+  -  unlike varaiable array can hold/store more than one data of different dataType that are separated by commas and enclosed within a Square bracket. 
+  syntax 
+  varaiablename =data 
+  arrayname = [data1 , data2....]
+
+  = key:value pairs data is stored 
+  = key = index value -  0 - length-1 of that array 
+  = value = data 
+
+Array Operations 
+----------------
+
+  1) get - using index location array[index]
+  2) push()- is used to add items as the last element of an array.
+  3) unshift() - add items to an array as first element
+  4) pop() - delete an last item from an array
+  5) shift() - to delete the first item of an array 
+  6) sort() - to arrange the given array in ascending or descending order 
+     //ascending
+  array.sort((a,b)=>a-b)
+     //descending
+  array.sort((a,b)=>b-a)
+  7) flat(depth)- reduce the dimension eg : 2d - 1 - infinity
+  8) foreach() - used to access each item from a given array
+  9) map()- used to access each element from a given array and return a new array with same of elements that of the parent array.
+  10) reduce((acc , currentvalue)=>) - return a single value from the given array - eg: sum , highest , small 
+  11) filter() - it a newArray with all elements satisfying a particular condition
+  12) find()- return a first element satify a particular condition 
+  13) some() - to check the given condition is true or false 
+  14) splice( startindex , deletecount , items...)- add and remove items of an array at different location  
+      - accept negative value - start from  end of the array 
+  15) includes(item) => return boolean value based on the item 
+  16) indexOf() - index of a particular item
+  17) slice(start index , end index ) - create a sub array 
+  18) reduceRight() - iteration starts from end and return a single value.
+  19) lastIndexOf() - find the last index of the repeated elements
+
+
+  different way to access items from an array 
+  -------------------------------------------
+  1) for loop 
+  2) in   - return the indexes of an array   
+  3) of - return directly the item from an array.
+
+
+  Algorithm 
+  ---------
+  step by step procedure to solve a given program 
+
+  Flow chart 
+  --------
+  diagram which visually represent step by step or flow of procedures to solve a given task
+
+  Linear Search Algorithm 
+  ------------------------
+  - is a simple search algorithm that checks every element in a list or array sequentially to find a target value. It continues until the target value is found or the end of the list is reached.
+
+  Binary search algorithm
+  -----------------------
+  - executed in a sorted list or array.
+  - Unlike linear search, which checks each element sequentially, binary search works by repeatedly dividing the search interval in half. This reduces the number of comparisons significantly, making it much faster than linear search for large datasets.
+
+  nested array 
+  ------------
+  -  array inside another array 
+
+------------------------------------------------------------------------------------------------------------------    
+
+  String 
+  ------
+  - sequence of characters 
+  - immutable 
+
+  methods 
+  -------
+  1) startsWith() - check whether given string starts with a particular character - it returns boolean value - caseSensitive
+
+  2) endsWith()- check whether a iven string ends with a particular character - it returns boolean value - caseSensitive
+
+  3) toUpperCase() - convert the given string into capital letters
+
+  4) toLowerCase() - convert the given string into small letters
+
+  5) subString(startindex , endIndex) - to create subString
+  - where ending index is excluded
+
+  6) slice(startindex, endIndex) - 
+
+  7) trim() - remove space at the ends 
+
+  8) split(separator) - return a newArray have the element divide based on the separator 
+
+  9) replace() - it replace first matching content 
+
+  10) replaceAll()- replace all matching words 
+
+  11) Array.from() - return a array of character of a given string. 
+
+------------------------------------------------------------------------------------------------------------------    
+
+
+  objects 
+  ------
+  - used to store more than one data of different datatypes that are separated by comes and enclosed within curly bracket 
+  - unlike array the stored data have more clarity.
+
+  object Operations
+  -----------------
+  2) add - 
+     objectname['key'] = value 
+     Object.assign(objectname,{key:value})
+
+  3) update   
+  objectname['key'] = value  
+
+  4) delete
+      delete objectname.key 
+
+------------------------------------------------------------------------------------------------------------------    
+
+
+ Object oriented programming system (Oops)     
+ ------------------------------------------
+
+  - its a programming paradigm which consider real time entities into object and class.
+
+  Basic 
+  -----
+  - Class - BluePrint which contains common features from which different objects  can be created .
+  - object - its the real time entity created from class 
+  - reference - the memory location in which properties and methods are stored.
+
+  properties - variables inside a class 
+  methods - functions inside a class .
+  instance variable -
+
+  syntax 
+  ------
+
+  class className{
+    1) properties
+    2) constructors - used to initialize properties , method , self invoke
+    3) methods
+  }
+  syntax 
+  ------
+ const objectname = new classname () //instance
+
+ - it is not amndatory to place properties , methods and constructors together in every class.
+
+ Pillars of Oops 
+ ----------------
+1) Inheritance 
+   - used to access properties and methods from one class to another 
+   - parent class / super class / base class 
+   - child class / sub class / derived class 
+   - keyword - extends
+
+   Type of Inheritance 
+   -------------------
+   1) single Inheritance
+   2) multiple inheritance 
+   3) multilevel inheritance 
+   4) hierarcial inheritance 
+   5) Hybrid inheritance 
+
+   object Inheritance 
+   keyword = __proto__
+
+2) Polymorphism 
+   - poly - many  morphism - forms 
+   - methoad overloading
+       - methods with same name but different arguments - executes based on the arguments  
+       - js doesnot support directly 
+       - rest operator(...) - argument - array 
+   - method overriding
+        - methods with same name with same argument  - last written method will execute 
+        - js support this concept .
+3) Abstraction 
+    - refers to the idea of hiding the complex implementation details of a system and exposing only the essential features or functionalities to the user. 
+4) encapsulation 
+    -  It refers to the concept of bundling or wrapping data (attributes) and methods (functions) that operate on the data into a single unit, or class. 
+
+
+------------------------------------------------------------------------------------------------------------------    
+
+
+
+Exception Handling 
+------------------
+ - exception - run time error  
+ - exceptions are handled with the help of try-catch block 
+
+ - syntax 
+ ---------
+ try{
+   statement that might cause error 
+ }
+ catch{
+   statement to execute in case of errors
+ }
+ finally{
+   statement that need to be executed in both cases .
+ }
+
+------------------------------------------------------------------------------------------------------------------    
+
+
+    JavaScript in Frontend
+    ----------------------
+
+- js in the frontend is used to provide behaviours to web applications .
+
+- Browser - Its an application which provides an interface to communicate with the resources available in the internet. 
+
+- Browser Engine - html css , javaScript 
+- javaScript -  directly access DOM to provide behaviour.
+
+- DOM - Document object Model 
+ ----------------------------
+  - created by browser 
+  - tree structure of html Document 
+
+ - BOM - Browser Object model 
+  ---------------------------
+   - created by Browser 
+   - The BOM allows JavaScript to access and control various browser features such as the window, history, document, navigator, and location. It is the interface between JavaScript and the browser's environment, enabling web pages to interact dynamically with the browser's functionalities. 
+
+  how to apply js in html document 
+  ---------------------------------
+  1) internal apply 
+     - <script>
+         js code 
+     </script>
+     - head - after body
+  2) external apply 
+     - filename.js 
+     - <script src = "path"></script>
+   
+  Different way to access DOM 
+  ----------------------------
+  1) document.getElementByTagname() - return htmlcollection (array) 
+
+  2) document.getElementByClassName() - return htmlcollection of all tags with same classname .
+
+  3) document.getElementById() - return directly the element 
+
+  4) document.querySelector() - return first matching element 
+      //tag , #id ,// .class
+
+  5) document.querSelectorAll() - return all matching elements as nodeList(array)
+
+
+change the content in html document
+------------------------------------
+  .innerHTML()
+
+Events : Action Performed by the user to update the Dom 
+
+click 
+change 
+keydown 
+submit 
+load 
+
+------------------------------------------------------------------------------------------------------------------    
+
+Database 
+--------
+- it is used to store data .
+- large amount data store .
+
+- Browser storage 
+  ---------------
+  - Store limit amount of data 
+
+  - different types of browser storage 
+    -----------------------------------
+
+      1) local storage - permament storage 
+      2) session storage  - temperory storage - data be lost when the session is closed.
+
+  operations 
+  ---------
+  1) add - setItem("key", "value")   
+  json.stringfy() - to convert the data into string
+
+  2) update - setItem("key", "value")   
+
+  3) retrieve data -  getItem("key") 
+  json.parse() -convert back to object 
+
+  4) delete an item = removeItem("key")
+
+
+------------------------------------------------------------------------------------------------------------------    
+
+
+  API 
+  ------
+  - application programming interface
+  - application which provide an interface to communication between the resources available in the internet.
+
+ Types of api 
+  ------------
+  1) public api - free available , easy access data 
+  2) private api - secure - only the partner having the api key can access the data 
+  3) composite api - combination of private and public api  
+
+ Architecture - RESTful api 
+ --------------------------
+
+  Http 
+  ----
+  - HyperText transfer protocol - set of rule that should be followed while communicating between the resources 
+
+  HTTPS , FTP
+
+ Different parts of request 
+ ---------------------------
+ 1) req header - important - content type , token(authorization)
+ 2) req body  - data
+
+  Http methods 
+  ------------
+  1) post - to add a data 
+  2) get  - to retrieve data 
+  3) put - to update data 
+  4) delete - to remove a data 
+  5) patch -  update- particular portion 
+
+  JSON - JavaScript object notation  
+  ---------------------------------
+  - it is formate for sharing data between two application 
+  - {
+    "key":value
+  }
+
+  URL - Uniform resource locator 
+  ---
+  - address of the resource in the internet 
+
+  Response Series
+  ---------------
+
+  1) 1xx - information
+  2) 2xx - sucess response 
+  3) 3xx - redirection
+  4) 4xx - client side error
+  5) 5xx - serverside error 
+
+ 
+   Api tools 
+  ---------
+  1) thunder client  - vs code extension 
+  2) postman - real tool 
+ 
+
+
+ 
+
+  API Builting Technique
+  ----------------------
+
+  1) AJAX - Asynchronous JavaScript XML 
+   ------------------------------------
+   - XMLHttpRequest() - class 
+   - 1) create a instance for the class 
+        const obj = new XMLHttpRequest()
+   - 2) open() - to connect with the application 
+   - 3) send() - to send the request .
+   - readyState - property inside the class - changes from 1-4      
+
+  2) fetch 
+  ---------
+     - ES6 - fetch is preferred
+     - Promise() - class which used to handle asynchronous functions .
+     - it have three states 
+        1) resolved state - 200 - then()
+        2) pending state 
+        3) reject state - catch()
+
+  3) async await 
+  --------------
+    Advantages 
+    ----------
+    1) reduction of .then() method 
+    2) can store the result into a variable . 
+    3) it help the asynchronous function to behave like a synchronous - it can avoid callback hell.
+
+    async - function which contain api 
+    await  - api 
+
+------------------------------------------------------------------------------------------------------------------    
+
+
+ Begin a single thtread programming language how js handles both synchronous and asynchrounous functions together.  
+ ----------------------------------------------------------------------------------------------------------------
+
+ Even though JavaScript is single-threaded, it uses a special mechanism to handle asynchronous operations without blocking the main thread.
+
+ 1) Call Stack (Execution Stack):
+    - The Call Stack is where JavaScript keeps track of the functions that are currently being executed. It follows the Last In, First Out (LIFO) order. When a function is called, it’s added to the stack, and once it completes, it’s removed from the stack.
+
+ 2) Event Loop:
+
+    The Event Loop is responsible for monitoring the Call Stack and the Task Queue (micro task queue and call back queue). It ensures that once the Call Stack is empty, the event loop picks up the next task in the queue and pushes it to the stack for execution. 
+
+ 3) Micro task queue :
+
+    Hold the highest priorty api call like Api calls 
+
+ 4) Call back queue:
+
+   Hold the less priorty api call like Api calls         
+  
+ 5)  When JavaScript encounters an asynchronous operation, it’s added to the Task Queue. Once the Call Stack is clear, the event loop picks up these tasks and pushes them to the Call Stack.
+
+ 6) Web APIs:
+
+    For handling asynchronous operations like setTimeout, fetch API, or XHR (XMLHttpRequest), the browser or the JavaScript environment provides Web APIs that allow these operations to be executed outside of the main thread. Once these operations are completed, they are added to the Task Queue for the Event Loop to handle. 
+
+    CALL BACK Hell 
+    --------------
+    - The waiting phase of Asunchronous function till its turn comes is called callback Hell.
+
+
+
+  

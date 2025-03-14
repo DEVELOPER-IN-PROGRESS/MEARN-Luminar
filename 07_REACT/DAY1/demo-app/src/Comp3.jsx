@@ -7,13 +7,15 @@ class Comp3 extends React.Component{
         this.state = { carName: 'Mustang' , color:'Yellow'}
     }
 
+    change = () => {
+        // console.log('clicked')
+        this.setState({carName:"Accord"})
+    }
+
     render(){
         const { part } = this.props;
-        
-        let change = () => {
-            // console.log('clicked')
-            this.setState({carName:"Accord"})
-        }
+
+
 
         return(
             <>
@@ -28,7 +30,7 @@ class Comp3 extends React.Component{
 
             <h6> State in React </h6>
             <p> Car Name is: {this.state.carName} </p>
-            <button className="btn btn-success text-light mx-2" onClick={ () => {change()}}> Change car name </button>
+            <button className="btn btn-success text-light mx-2" onClick={ () => {this.change()}}> Change car name </button>
              <Register />
             </>
         );
