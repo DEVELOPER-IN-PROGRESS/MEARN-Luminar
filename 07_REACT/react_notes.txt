@@ -35,3 +35,120 @@ import  - import defautl component name
 js code should be placed above the return function call
 html code should be placed inside the return function
 
+
+css
+--
+1) inline
+    in JSx sytyle should be given as objects each key:value pairs separated by commas
+    eg: <h2 style="{{ proepertyName: 'value',  }}"
+    css proterties with more than one word should be written in cameCase for eg: backgroundColor , fontSize etc
+
+2) External
+    - external file with .css extension
+    -
+
+3) Modules
+    - create an external file with name format as < filename.module.css >
+    - the modules can be imported anywhere in the project
+    - modules are stored onto a variable and properties are accessed throught this variable
+    - modules should be created in src folder
+    - the styles in the module can be used in the jsx file using format className={<variable>.<class-name inside module css file> }
+
+inline- partcular tag specific style
+component.css - for a particular component
+module.css - can be used for more that one component
+index.css - This is used if we want global styling throughout the page
+
+Js in JSX
+To place a js related content inside JSX we need to use single curly bracket {} around the variable
+
+To Use functions inside JSX we need to follow the format
+ { function_name }
+
+
+ Rules to create a component
+ 1) Component Name must always start with Capital Name or It will always result in an errors
+ 2) extension can be .js or .jsx
+
+3) The custom components creted by us needs to have direct or indirect connection with the root element with proper import statements to render our component successfully .
+failure to include proper import statements would result in in page error .
+
+Data Sharing
+React by default uses unidirectional data sharing that is from parent to child and we achieve this by
+passing props along with the component
+
+
+Conditional Rendering
+1) Ternary operator
+2) Truthy operator
+
+
+constructors are used to initialize the properties in the instance class.
+super() is used inside the constructor to access the properties from the parent class.
+
+Lifecycle of "Class" components
+----------------------------
+1) Mounting: In This phase the component is added to the DOM.
+2) Updating : When the component undergoes modification
+3) Unmounting : Removing the content from the DOM
+
+Methods undergoing behind the three Phases ( these are automatically called by react )
+
+1) Mounting
+-constructor()
+    initialize the state in the class
+-getDerivedStateFromProps()
+    It Modifies the state with the values of props
+    this function returns an object if there is any updations
+    or else it return null to indicate that there is no state updation
+-render()
+    return the JSX which is the output of the component that need to be displayed in the browser
+-componentDidMount()
+    Network requests are performed in this method (eg : API calls)
+
+2) Updating phase::
+-getDerivedStateFromProps()
+    Same as in mounting phase if there is any modification it returns an Object
+-shouldComponentUpdate()
+    return true or false based on whether the component should be updated or not
+-render()
+    When the component is updated with new data . render should return JSX with updated value
+    called when shouldComponentUpdate returns true
+-getSnapShotBeforeUpdate()
+    It invokes just before the DOM is updated with the values from the virtual DOM to store informations
+    of the real DOM.
+-componentDidUpdate()
+    Invoke after the updation in the real DOM and execute any further side effects or API calls
+    in this case side effect refers to APi errors or Promise rejects
+    anything that goes against pure functions can be called as side effects
+
+3) Unmounting phase
+-componentWillUnmount()
+    removes / clears .  break the Network calls  and clear the DOM
+
+4) Error Handling phase
+    This can happen parallel to any of the above phase
+-getDerivedStateFromError()
+    error will be displayed in UI or in browser console
+    or in other cases the UI will be blank
+-componentDidCatch()
+    console error displayed
+
+HOOKS
+    They are functions in order to achieve the same functionanlity as in functional components react introduced the concept of hooks
+    It allows developers to use the state and life cycle features.
+    there are two types of hooks:
+a)Predefined Hooks:
+    eg : useState, useEffect
+    Inorder to give state to a function
+    to provide
+    useRef  -refernce ot particulatar function
+    useContext - tor create context for functional component
+b)Custom Hooks
+    User defined hooks
+
+
+Rules to Use a hook
+1) import hooks at the top of the functional component
+2) Hooks should be called at the top portion inside  the function.
+3) We cannot invoke the hooks conditionally
