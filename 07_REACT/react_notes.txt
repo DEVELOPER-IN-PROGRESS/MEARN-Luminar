@@ -152,3 +152,19 @@ Rules to Use a hook
 1) import hooks at the top of the functional component
 2) Hooks should be called at the top portion inside  the function.
 3) We cannot invoke the hooks conditionally
+
+
+populating an array in JSX using loop
+1) we can use map on an array inside {  } main curly bracket
+if we are using js variables inside again we need to use ( ) paranthesis this is only
+applicable in react . so after the map function we need to use ( ) instead of {}
+
+newArray.map( (item,index) =>
+                    ( <tr>
+                    <td>{index+1}</td>
+                    <td>{item.username}</td>
+                    <td>{item.age}</td>
+                    </tr>
+                    ))
+
+if we want to use { } we need to use a return statement and place { } inside it
