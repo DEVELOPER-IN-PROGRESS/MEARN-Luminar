@@ -45,11 +45,12 @@ export default function Register(){
         let obj = {}
 
         // New Object creation This one works foolproof
-
+        /*
         Object.keys(userDetails).map( k => obj[k]= userDetails[k] )
         obj[key] = value;
         setUserDetails({...obj})
         console.log(obj)
+        */
 
         /*
         // Not sure why this don't work , creates a new key instead of overwriting
@@ -60,7 +61,7 @@ export default function Register(){
 
         // another optimized method
         //
-        // setUserDetails({...userDetails, [key]:value })
+        setUserDetails({...userDetails, [key]:value })
         console.log(userDetails)
     }
 
@@ -79,13 +80,6 @@ export default function Register(){
 
         <h6 className="text-center text-danger fs-2 my-3">Employee:: {name}</h6>
         <button className="btn btn-info" onClick={ () =>{ changeName('Elliot') } }>change name </button>
-
-        <ol className='fs-3 mx-auto my-3 '>
-            { Object.keys(color).map( key => <li>{ color[key]}</li>)}
-        </ol>
-
-        <button className="btn btn-success" onClick={ () => change('Yellow') }>Change Color</button>
-
         <p className='text-center fs-3 my-3'>the input  user Details are:: </p>
         <ul>
             {
