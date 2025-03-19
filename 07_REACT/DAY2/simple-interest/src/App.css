@@ -48,8 +48,8 @@ body{
   width: 100%;
   display: flex;
   flex-direction:column;
-  row-gap: 25px;
-  align-items: stretch;
+    row-gap: 25px;
+    align-items: stretch;
 }
 
 .amount_box{
@@ -64,6 +64,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* column-gap:10px; */
 }
 
 button.btn{

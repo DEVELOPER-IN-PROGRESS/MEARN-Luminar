@@ -168,3 +168,18 @@ newArray.map( (item,index) =>
                     ))
 
 if we want to use { } we need to use a return statement and place { } inside it
+
+
+18/03/2025
+
+match() -- it returns an array when the string matches with the regular expression
+REgex is a sequence of character that define a search pattern
+
+Rules for REgex-
+-------------
+Expression should start with ^ symbol
+it should end with $ symbol
+
+pattern  '^[0-9a-zA-Z@]*$'
+
+!! the double negation operator which double negates or converts the input into boolean values
