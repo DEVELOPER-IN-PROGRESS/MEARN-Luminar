@@ -183,3 +183,13 @@ it should end with $ symbol
 pattern  '^[0-9a-zA-Z@]*$'
 
 !! the double negation operator which double negates or converts the input into boolean values
+
+
+npm install --save @fortawesome/react-fontawesome @fortawesome/free-brands-svg-icons @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
+
+
+Steps to set up path for components
+1) Install react-router-dom library using npm command : " npm install react-router-dom"
+2) wrap the entire <App> </App> component inside the <BrowserRouter > component
+3) PLace router  tag inside the  routes which is used to set path
+    Components which are used in all pages should be called  inside the app component for eg Header, Footer
