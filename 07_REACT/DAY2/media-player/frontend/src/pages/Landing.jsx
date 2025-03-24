@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card'
+import { Link } from 'react-router-dom';
 
 function Landing() {
   return (
@@ -13,7 +14,9 @@ function Landing() {
               <h3>Welcome to Media <span className="text-warning">Player</span></h3>
               <p className='mt-4' style={{ fontSize:'18px', textAlign:'justify',}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nesciunt, adipisci hic, inventore praesentium voluptatum velit consequuntur quidem odit repellat, cupiditate nam modi. Corporis minima a inventore obcaecati beatae dolore.</p>
 
-              <button className="btn btn-warning p-2 btn-rounded">Get Started</button>
+              <Link to={'/home '}>
+                <button className="btn btn-warning p-2 btn-rounded">Get Started</button>
+              </Link>
             </Col>
             <Col mb={5} md={6} className="justify-content-center d-flex">
                   <img src="https://i.gifer.com/embedded/download/9hHa.gif" alt="beats image" className="img-fluid w-50" />

@@ -8,7 +8,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import { FontAwesomeIcon  }  from '@fortawesome/react-fontawesome' ;
 import { faVideo } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram , faXTwitter ,faSquareFacebook ,faSquareWhatsapp , faLinkedin }  from '@fortawesome/free-brands-svg-icons'
-
+import {Link} from 'react-router-dom'
 
 
 function Footer() {
@@ -18,10 +18,12 @@ function Footer() {
           <Container>
               <Row className='justify-content-center align-items-center'>
                 <Col sm={12} md={8} xl={4} className='mb-2 mb-lg-0'>
+                  <Link className='text-decoration-none' to={'/'}>
                    <h3 className="text-warning text-start">
                       <FontAwesomeIcon icon={faVideo} beat className="me-3"/>
                       Media Player
                    </h3>
+                   </Link>
                    <p className="text-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis iusto quidem possimus dolor quisquam laborum. Porro, quidem minus odio nulla dolore, voluptatem reiciendis a nemo provident voluptate, recusandae tenetur ad.
                    </p>
                 </Col>
@@ -29,9 +31,15 @@ function Footer() {
                 <Col sm={12} md={6} xl={2} className='mb-2 mb-lg-0'>
                     <ul className="list list-unstyled">
                       Pages
-                      <li className="footer-links">Landing Page</li>
+                      <Link className='text-decoration-none' to={'/'}>
+                          <li className="footer-links">Landing Page</li>
+                      </Link>
+                      <Link className='text-decoration-none' to={'/home'}>
                       <li className="footer-links">Home Page</li>
+                      </Link>
+                      <Link className='text-decoration-none' to={'/watchhistory'}>
                       <li className="footer-links">Watch history </li>
+                      </Link>
                     </ul>
                 </Col>
                 <Col sm={12} md={6} xl={2}>
