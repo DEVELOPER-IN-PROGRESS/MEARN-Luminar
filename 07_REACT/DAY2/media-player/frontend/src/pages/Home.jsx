@@ -13,8 +13,9 @@ function Home() {
     <div className="container d-flex justify-content-between my-4">
           <Add/>
           <Link to={'/watchhistory'} className="text-decoration-none">
-            <h5 className='fs-4 text-light'>Watch History
-            <FontAwesomeIcon icon={faClockRotateLeft} />
+            <h5 className='fs-4  text-dark d-flex justify-content-center align-items-center text-light'>
+            <span className="d-none d-lg-block">Watch History</span>
+            <FontAwesomeIcon className="ms-3" icon={faClockRotateLeft} />
             </h5>
           </Link >
     </div>

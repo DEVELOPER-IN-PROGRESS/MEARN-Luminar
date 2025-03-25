@@ -193,3 +193,16 @@ Steps to set up path for components
 2) wrap the entire <App> </App> component inside the <BrowserRouter > component
 3) PLace router  tag inside the  routes which is used to set path
     Components which are used in all pages should be called  inside the app component for eg Header, Footer
+
+JSON Server
+- json-server is a lightweight npm package that simiulates a real backend API server.
+- It is used by frontend developes to create a mock API without needing for a complex backend
+
+features
+supports http methods like GET PUT POST DELETE PATCH
+
+STeps to create a JSON server
+1) create separate folder in the root of our project
+2) create a package.json using the command npm init -y
+3) A package.json file will be created and then we need to install json-server from npm registry
+    

@@ -2,6 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/esm/Button'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Videocard from './Videocard'
 
 function SubCategory() {
   return (
@@ -9,11 +10,11 @@ function SubCategory() {
         <div className="d-flex align-items-center justify-content-between">
             <p className="fs-5 m-0">Tamil songs</p>
             <Button variant="danger" className=''>
-                 <FontAwesomeIcon icon={faTrashCan} />
+                <FontAwesomeIcon icon={faTrashCan} />
             </Button>
         </div>
         <div className="song-name p-2 rounded-3 bg-secondary mt-3">
-            Naa ready tha
+            <Videocard />
         </div>
     </div>
   )

@@ -15,15 +15,16 @@ export default function Add(){
 
 return(
 	 <>
-		<h4 className="fs-4 text-light">Upload New Video
+		<h4 className="fs-4 text-dark d-flex justify-content-center align-items-center">
+			<span className="d-none d-lg-block">Upload New Video</span>
 			<FontAwesomeIcon onClick={handleShow} className='ms-3' icon={faCloudArrowUp} />
 		</h4>
 
 		<Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>
-		  		<FontAwesomeIcon icon={faFilm} />
-			Upload Videos
+          <Modal.Title  className="">
+			<span className="">Upload Videos</span>
+		  	<FontAwesomeIcon className="ms-2" icon={faFilm} />
 		  </Modal.Title>
         </Modal.Header>
         <Modal.Body >
