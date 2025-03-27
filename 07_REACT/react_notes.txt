@@ -205,4 +205,5 @@ STeps to create a JSON server
 1) create separate folder in the root of our project
 2) create a package.json using the command npm init -y
 3) A package.json file will be created and then we need to install json-server from npm registry
-    
+
+react Toastify - provides you with  different alert than from the normal browser alert
