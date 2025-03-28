@@ -207,3 +207,15 @@ STeps to create a JSON server
 3) A package.json file will be created and then we need to install json-server from npm registry
 
 react Toastify - provides you with  different alert than from the normal browser alert
+
+27/03/2025
+useEffect - achieve lifecycle for the functional component
+syntax:
+useEffect( ()=>{},dependency)
+dependecncy can take multiple values
+1) no dependency: useEffect will be called repeatedly or when we want to perform it on interval
+                basis
+2)[] empty array - called on initial page load
+3) [..states or props] - will be called on initial page load as well as when the states passed get changed
+
+useEffect can also handle side effects as well
