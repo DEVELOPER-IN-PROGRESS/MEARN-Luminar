@@ -4,19 +4,34 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import { getAllHistory } from '../services/allApi'
 import { useEffect , useState } from 'react'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import Button from 'react-bootstrap/Button'
+import { deleteVideoFromHistory } from '../services/allApi'
 
 function Watchhistory() {
   const [historyState , setHistoryState] = useState([])
+  const [deleteStatus,setDeleteStatus] = useState(false)
 
   const fetchHistory =  async () => {
     const result = await getAllHistory()
+    console.log(result)
+    if(result?.status >=200 && result?.status <300){
+      setHistoryState(result.data)
+    }
+  }
+
+  const deleteVideo = async (idx) => {
+    const result = await deleteVideoFromHistory(idx);
     // console.log(result)
-    setHistoryState(result.data)
+    if(result.status >199 && result.status<300){
+        setDeleteStatus(!deleteStatus)
+        // fetchHistory() //not a best practise should be called in useEffect
+    }
   }
 
   useEffect(() => {
     fetchHistory()
-  },[])
+  },[deleteStatus])
 
   return (
     <>
@@ -33,6 +48,7 @@ function Watchhistory() {
 
           {/* or use table-responsive*/}
           <div className="container overflow-x-auto">
+           { historyState.length != 0?
             <table className="watch-table mx-auto table table-bordered border-dark">
                 <thead>
                     <tr >
@@ -44,34 +60,30 @@ function Watchhistory() {
                     </tr>
                 </thead>
                 <tbody>
-		{ /*
-                    <tr>
-                    <td className=" py-2 text-center">dummy</td>
-                    <td className=" py-2 text-center">dummy</td>
-                    <td className=" py-2 text-center"><Link className="text-decoration-none" to={""}>
-                            dummy
-                        </Link></td>
-                    <td className=" py-2 text-center">dummy</td>
-                    <td className=" py-2 text-center">dummy</td>
-                    </tr>
-		*/}
-		{
-      /*
-		 historyState?.length && historyState.map( (video,idx) => (
-		  <tr key={`history-row-${idx}`}>
-                    <td className=" py-2 text-center">{idx+1}</td>
-                    <td className=" py-2 text-center">{video.caption}</td>
-                    <td className=" py-2 text-center">
-			<Link className="text-decoration-none" to={`${video.embedLink}`}>
-                            {video.caption}
-                        </Link></td>
-                    <td className=" py-2 text-center">{video.time}</td>
-                    <td className=" py-2 text-center">dummy</td>
-                    </tr>
-		))
-		*/}
+		          {
+                    historyState?.length > 0  && historyState.map( (video,idx) => (
+                      <tr key={`history-row-${idx}`}>
+                        <td className=" py-2 text-center">{idx+1}</td>
+                        <td className=" py-2 text-center">{video.caption}</td>
+                        <td className=" py-2 text-center">
+                            <Link className="text-decoration-none" to={`${video.embedLink}`} target="_blank">
+                                {video.caption}
+                            </Link>
+                        </td>
+                        <td className=" py-2 text-center">{video.time}</td>
+                        <td className=" py-2 text-center">
+                        <Button variant="danger" onClick={() => { deleteVideo(video?.id)}} >
+                            <FontAwesomeIcon icon={faTrashCan}  />
+                        </Button>
+                        </td>
+                      </tr>
+                    ))
+		          }
                 </tbody>
             </table>
+            :
+             <p className="text-danger text-center fs-3">No History Found!</p>
+            }
           </div>
 
         </div>

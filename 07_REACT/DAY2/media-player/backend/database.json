@@ -23,26 +23,68 @@
       "image": "https://i.ytimg.com/vi/PGqltBCo6cU/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAAglYOYFUm4luJmKgcUsmn8GnHIQ\",",
       "embedLink": "https://www.youtube.com/embed/PGqltBCo6cU",
       "id": 5
+    },
+    {
+      "caption": "Patagonia 4K",
+      "image": "https://i.ytimg.com/vi/mMtCo3tycpQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC2x9xQ68XdbIF0WJLqCMMWNKq2TQ",
+      "embedLink": "https://www.youtube.com/embed/mMtCo3tycpQ",
+      "id": 6
+    },
+    {
+      "caption": "Norway Exploration",
+      "image": "https://i.ytimg.com/vi/CxwJrzEdw1U/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAFank9LpCcas-fRJShgUoasPOfkQ",
+      "embedLink": "https://www.youtube.com/embed/CxwJrzEdw1U",
+      "id": 7
+    },
+    {
+      "caption": "L2: AZRAEL song",
+      "image": "https://i.ytimg.com/vi/VysFcxiaw9A/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCHnBl0zUIoQNB0IC2vjnCzoAwJBQ",
+      "embedLink": "https://www.youtube.com/embed/nmh8pNnYaDM",
+      "id": 8
     }
   ],
   "history": [
     {
+      "caption": "L2E empuraan trailer",
+      "url": "https://www.youtube.com/embed/PGqltBCo6cU",
+      "time": "01/04/2025, 14:26:27",
+      "id": 1
+    },
+    {
+      "caption": "Peregrine Falcon",
+      "url": "https://www.youtube.com/embed/mMtCo3tycpQ",
+      "time": "01/04/2025, 14:26:29",
+      "id": 2
+    },
+    {
+      "caption": "Patagonia 4K",
+      "url": "https://www.youtube.com/embed/mMtCo3tycpQ",
+      "time": "01/04/2025, 14:46:02",
+      "id": 3
+    },
+    {
+      "caption": "L2: AZRAEL song",
+      "url": "https://www.youtube.com/embed/nmh8pNnYaDM",
+      "time": "01/04/2025, 14:46:06",
+      "id": 4
+    },
+    {
       "caption": "Bazooka | 2025",
       "url": "https://www.youtube.com/embed/LkKChCQnjB4",
-      "time": "28/03/2025, 15:19:38",
-      "id": 1
+      "time": "01/04/2025, 14:46:19",
+      "id": 5
     },
     {
       "caption": "walrus documentary",
       "url": "https://www.youtube.com/embed/BL5NohNcofI",
-      "time": "28/03/2025, 15:38:08",
-      "id": 2
+      "time": "01/04/2025, 14:50:41",
+      "id": 6
     },
     {
-      "caption": "L2E empuraan trailer",
-      "url": "https://www.youtube.com/embed/PGqltBCo6cU",
-      "time": "01/04/2025, 13:36:04",
-      "id": 3
+      "caption": "L2: AZRAEL song",
+      "url": "https://www.youtube.com/embed/nmh8pNnYaDM",
+      "time": "01/04/2025, 14:51:04",
+      "id": 7
     }
   ],
   "category": [],

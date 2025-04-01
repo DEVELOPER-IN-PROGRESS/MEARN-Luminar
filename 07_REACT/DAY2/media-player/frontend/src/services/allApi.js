@@ -20,3 +20,7 @@ export const addToWatchHistory = async(reqBody) => {
 export const getAllHistory = async() =>{
 	return await commonApi('GET',`${serverurl}/history`)
 }
+
+export const deleteVideoFromHistory = async(index) => {
+	return await commonApi('DELETE',`${serverurl}/history/${index}`,{})
+}
