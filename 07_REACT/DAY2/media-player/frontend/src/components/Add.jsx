@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import { videoAddApi , allVideosApi } from '../services/allApi';
 import { ToastContainer , toast } from 'react-toastify'
 
-export default function Add(){
+export default function Add({setAddVideoStatus}){
 
   const [show, setShow] = useState(false);
   const [videoDetails, setvideoDetails] = useState({
@@ -41,6 +41,7 @@ export default function Add(){
 		if(res.status >=200 && res.status < 300){
 			toast.success('Video added')
 			handleClose()
+			setAddVideoStatus(res.data)
 		}else{
 			toast.error('Something went wrong')
 			handleReset()

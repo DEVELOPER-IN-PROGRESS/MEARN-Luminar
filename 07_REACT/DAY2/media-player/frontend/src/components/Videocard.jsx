@@ -5,20 +5,50 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { useState , useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
+import { deleteVideoApi , addToWatchHistory } from '../services/allApi'
 
-
-function Videocard({video}) {
+function Videocard({video,setDeleteVideoStatus}) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+    const addVideoToHistory = async() => {
+        const date = new Date()
+        const timestamp = new Intl.DateTimeFormat("en-GB",{
+          year:'numeric', month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'
+        }).format(date)
+
+        console.log(timestamp)
+
+        let caption = video?.caption
+        let url = video?.embedLink ;
+        const result = await addToWatchHistory({caption ,url , time:timestamp})
+        console.log(result);
+        
+
+    }
+
+    const handleShow = () => {
+      setShow(true)
+      addVideoToHistory()
+    };
+
+    const handleDelete = async (id) => {
+      //  console.log('delete button')
+       const result = await deleteVideoApi(id)
+       console.log({result})
+       if(result.status >=200 && result.status < 300){
+        setDeleteVideoStatus(result.data)
+       }
+    }
+
   return (
     <>
     <Card className="mt-3 mt-lg-2" style={{}}>
-      <Card.Img  onClick={handleShow} variant="top" className='img-fluid' style={{height:'250px'}} src={`${video?.image}`} />
+      <Card.Img  onClick={()=>{handleShow()}} variant="top" className='img-fluid' style={{height:'250px'}} src={`${video?.image}`} />
       <Card.Body className='d-flex align-items-center justify-content-between'>
         <Card.Text>{ video?.caption }</Card.Text>
-        <Button variant="danger">
-            <FontAwesomeIcon icon={faTrashCan} />
+        <Button variant="danger" onClick={() => {handleDelete(video?.id)}} >
+            <FontAwesomeIcon icon={faTrashCan}  />
         </Button>
       </Card.Body>
     </Card>

@@ -4,9 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { allVideosApi } from '../services/allApi';
 
-function View() {
+function View({addVideoStatus}) {
 
   const [allVideo , setAllVideo ] = useState([])
+  const [ deleteVideoStatus , setDeleteVideoStatus] = useState({})
 
   const getAllVideo = async () => {
 	const result = await allVideosApi();
@@ -17,7 +18,7 @@ function View() {
 
   useEffect(()=>{
 	getAllVideo()
-  })
+  },[addVideoStatus,deleteVideoStatus])
 
 // console.log(allVideo)
 
@@ -31,7 +32,7 @@ function View() {
 
                  allVideo.map( (video,idx) => (
                 <Col key={`col-${idx}`} sm={12} md={3} className="" lg={3}>
-                        <Videocard key={`card-${idx}`} video={video}/>
+                        <Videocard key={`card-${idx}`} setDeleteVideoStatus={setDeleteVideoStatus} video={video}/>
                 </Col>))
 		:
 		<Col className="d-flex justify-content-center align-items-center flex-column">

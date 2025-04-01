@@ -13,13 +13,38 @@
       "id": 2
     },
     {
-      "caption": "L2E Empuraan Trailer (Malayalam) | Mohanlal | Prithviraj Sukumaran | Murali Gopy",
-      "image": "https://i.ytimg.com/vi/PGqltBCo6cU/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAAglYOYFUm4luJmKgcUsmn8GnHIQ",
+      "caption": "Bazooka | 2025",
+      "image": "https://i.ytimg.com/vi/LkKChCQnjB4/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDs6BHgvbDE3wantLz1S01HtyIrRw",
+      "embedLink": "https://www.youtube.com/embed/LkKChCQnjB4",
+      "id": 4
+    },
+    {
+      "caption": "L2E empuraan trailer",
+      "image": "https://i.ytimg.com/vi/PGqltBCo6cU/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAAglYOYFUm4luJmKgcUsmn8GnHIQ\",",
       "embedLink": "https://www.youtube.com/embed/PGqltBCo6cU",
+      "id": 5
+    }
+  ],
+  "history": [
+    {
+      "caption": "Bazooka | 2025",
+      "url": "https://www.youtube.com/embed/LkKChCQnjB4",
+      "time": "28/03/2025, 15:19:38",
+      "id": 1
+    },
+    {
+      "caption": "walrus documentary",
+      "url": "https://www.youtube.com/embed/BL5NohNcofI",
+      "time": "28/03/2025, 15:38:08",
+      "id": 2
+    },
+    {
+      "caption": "L2E empuraan trailer",
+      "url": "https://www.youtube.com/embed/PGqltBCo6cU",
+      "time": "01/04/2025, 13:36:04",
       "id": 3
     }
   ],
-  "history": [],
   "category": [],
   "users": [
     {

@@ -19,5 +19,5 @@ function SubCategory() {
     </div>
   )
 }
+export default SubCategory;
 
-export default SubCategory
