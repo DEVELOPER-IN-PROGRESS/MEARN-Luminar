@@ -87,7 +87,33 @@
       "id": 7
     }
   ],
-  "category": [],
+  "category": [
+    {
+      "category": "star wars",
+      "allvideos": [],
+      "id": 1
+    },
+    {
+      "category": "anime",
+      "allvideos": [],
+      "id": 2
+    },
+    {
+      "category": "afeagfa",
+      "allvideos": [],
+      "id": 3
+    },
+    {
+      "category": "fwefwe",
+      "allvideos": [],
+      "id": 4
+    },
+    {
+      "category": "anime",
+      "allvideos": [],
+      "id": 5
+    }
+  ],
   "users": [
     {
       "id": 1,

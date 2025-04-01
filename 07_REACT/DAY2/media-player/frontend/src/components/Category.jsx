@@ -3,11 +3,48 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/esm/Form';
+import { addCategoryApi } from '../services/allApi'
+import { ToastContainer , toast } from 'react-toastify';
 
 function Category() {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [categoryName, setCategoryName] = useState("")
+
+  const handleReset = () => {
+    setCategoryName("")
+  }
+
+  const handleClose = () => {
+    setShow(false);
+    handleReset();
+  }
+
+  const addNewCategory = async() => {
+    console.log(categoryName)
+
+    if(categoryName){
+
+      const reqBody = {
+        category: categoryName,
+        allvideos: []
+      }
+
+      const  result = await addCategoryApi(reqBody)
+
+      if(result?.status >199 && result?.status <300){
+        toast.success("Category Added Successfully")
+        handleClose()
+      }else{
+        toast.error("something went wrong")
+        handleReset()
+      }
+    }
+    else{
+      toast.error("Please Add a Category Name")
+    }
+
+  }
 
   return (
     <>
@@ -22,20 +59,20 @@ function Category() {
             <Modal.Body>
               <Form className='border border-2 border-dark rounded-3 px-3 py-4'>
                 <Form.Group className="" controlId="exampleForm.ControlTextarea1">
-                  <Form.Control placeholder='Enter Category Name' as="textarea" rows={2} />
+                  <Form.Control placeholder='Enter Category Name' value={categoryName} onChange={(e)=>{setCategoryName(e.target.value)}} as="textarea" rows={2} />
                 </Form.Group>
               </Form>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
+              <Button variant="secondary" onClick={()=>handleReset()}>
                 Cancel
               </Button>
-              <Button variant="warning" onClick={handleClose}>
+              <Button variant="warning"  onClick={() =>{ addNewCategory()}} >
                 Add
               </Button>
             </Modal.Footer>
           </Modal>
-
+      <ToastContainer position='top-right' theme="dark" autoClose={2500} />
       </div>
     </>
   )
