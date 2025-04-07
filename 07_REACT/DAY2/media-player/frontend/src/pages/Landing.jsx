@@ -2,7 +2,6 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom';
 
 function Landing() {
@@ -95,7 +94,7 @@ function Landing() {
                     </p>
                 </Col>
                 <Col sm={12} md={6} className="mt-4 mt-lg-0">
-                    <iframe width="100%" height="514" src="https://www.youtube.com/embed/pn6M7_L1JbQ?si=j0Lbj9AsyRwTL081" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen >
+                    <iframe width="100%" height="514" src="https://www.youtube.com/embed/pn6M7_L1JbQ?si=j0Lbj9AsyRwTL081" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen >
                     </iframe>
                 </Col>
            </Row>

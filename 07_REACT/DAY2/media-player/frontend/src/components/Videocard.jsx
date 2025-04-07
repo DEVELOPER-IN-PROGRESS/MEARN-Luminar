@@ -7,7 +7,7 @@ import { useState , useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { deleteVideoApi , addToWatchHistory } from '../services/allApi'
 
-function Videocard({video,setDeleteVideoStatus}) {
+function Videocard({video,setDeleteVideoStatus , isPresent , category }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
 
@@ -23,7 +23,7 @@ function Videocard({video,setDeleteVideoStatus}) {
         let url = video?.embedLink ;
         const result = await addToWatchHistory({caption ,url , time:timestamp})
         console.log(result);
-        
+
 
     }
 
@@ -41,15 +41,25 @@ function Videocard({video,setDeleteVideoStatus}) {
        }
     }
 
+  const videoDrag = (e,video) => {
+    // console.log(e)
+    console.log(video)
+
+    e.dataTransfer.setData("VideoDetails",JSON.stringify({...video , category}))
+
+  }
+
   return (
     <>
-    <Card className="mt-3 mt-lg-2" style={{}}>
-      <Card.Img  onClick={()=>{handleShow()}} variant="top" className='img-fluid' style={{height:'250px'}} src={`${video?.image}`} />
+    <Card className="mt-3 mt-lg-2" style={{}}  draggable onDragStart={(e)=>{videoDrag(e,video)}}>
+    { !isPresent && <Card.Img  onClick={()=>{handleShow()}} variant="top" className='img-fluid' style={{height:'250px'}} src={`${video?.image}`} />}
       <Card.Body className='d-flex align-items-center justify-content-between'>
         <Card.Text>{ video?.caption }</Card.Text>
+        {
+          !isPresent &&
         <Button variant="danger" onClick={() => {handleDelete(video?.id)}} >
             <FontAwesomeIcon icon={faTrashCan}  />
-        </Button>
+        </Button> }
       </Card.Body>
     </Card>
 

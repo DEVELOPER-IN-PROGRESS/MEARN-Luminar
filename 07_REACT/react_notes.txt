@@ -219,3 +219,26 @@ dependecncy can take multiple values
 3) [..states or props] - will be called on initial page load as well as when the states passed get changed
 
 useEffect can also handle side effects as well
+
+
+Reducer: The function used to create reducer is called createRedcucer()
+- it has the ability to update state stored in the store
+
+
+Store: 
+- Function used to create store is configureStore
+- It is the place where the state is created
+- all the component is having the ability to access the store
+- State is created in the store
+- State created in the store will be accessible globally
+- therefore all component can access data but state modification is not possible
+
+Action:
+- It is the logic to update the state 
+- It is also a function which is also called as dispatch
+- The dispatch is accessed using the redux provided hook called as useDispatch
+- action sends the payload to the Reducer
+
+Redux is Depricated now hence we are using Redux Toolkit
+
+Redux Toolkit contains a single component wrapper which combines Action and Reducer functionality

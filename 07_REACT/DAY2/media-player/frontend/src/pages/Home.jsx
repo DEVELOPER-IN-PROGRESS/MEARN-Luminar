@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClockRotateLeft } from '@fortawesome/free-solid-svg-icons'
 import View from '../components/View'
 import Category from '../components/Category'
-import Subcategory from '../components/Subcategory'
+
 
 function Home() {
 const [addVideoStatus , setAddVideoStatus] = useState()
+const [patchCategory, setPatchCategory] = useState(false)
+
   return (
     <>
     <div className="container d-flex justify-content-between my-4">
@@ -24,11 +26,10 @@ const [addVideoStatus , setAddVideoStatus] = useState()
     <div className="conatainer-fluid p-3">
         <div className="row">
           <div className="col-12 col-md-9 col-lg-90 col-xl-8">
-                <View addVideoStatus={addVideoStatus} />
+              <View patchCategory={patchCategory} setPatchCategory={setPatchCategory}  addVideoStatus={addVideoStatus} />
           </div>
           <div className="col-12 col-md-3 col-lg-3 col-xl-4">
-              <Category />
-              <Subcategory />
+              <Category  setPatchCategory={setPatchCategory} patchCategory={patchCategory} />
           </div>
         </div>
     </div>
