@@ -15,7 +15,7 @@ function App() {
       {/* <h1 className="text-primary ">Media Player</h1>
       <FontAwesomeIcon icon={faHouse} /> */}
 
-      <Header />
+      <Header  />
          {/* contents */}
 
         <Routes>
@@ -23,7 +23,7 @@ function App() {
            <Route path='/home' element={ <Home/>} />
            <Route path='/watchhistory' element={ <Watchhistory/>} />
         </Routes>
-      
+
         {/* footer content */}
       <Footer/>
     </>

@@ -1,0 +1,86 @@
+MODULE V 
+Node and Express
+
+MCV Architecture 
+M: Model 
+V: View
+C: Controller
+
+<MVC Architecture diagram here >
+Model is the structure in which the data is defined 
+View the client which sends the request 
+Controller is a function which contains the logic to solve the request
+
+Router : contains the path  which is meant to  resolve the request 
+
+Node
+Node is a runtime environment for the javascript which can be executed outside the browser
+
+Modules: 
+Modules are js files or libraries that can be used in the node.js application to provide specific functionalities. If you want to use a module in your application it should be imported.
+
+In the backend we use the 'require' keyword in place of import.
+similarly for the export we use the module.export
+
+Types of modules
+1) Built-in module
+ some common built-in modules are
+
+  1) File System modules - in order to work with the files in your computer/system
+ 	common Uses:
+	1) Read a File - readFile()
+	2) To Create a File - open()
+	3) Update a file - writeFile()
+	4) delete a file - unlink()
+	5) rename a file - rename()
+
+  2) HTTP Module: 
+    - It helps to transfer data with http
+    - It can create an http server which have the ability to resolve the request - createServer()
+
+  3) HTTPS Module:
+    - can create a server which can resolve request coming in https protocol
+
+  4) Event modules
+    - 
+    
+  5) Crypto Modules
+    - Used to encryption and decryption 
+
+
+2) Custom modules
+
+
+Environment Variables
+It is a variable which is typically used to provide the ability to configure a value in your code 
+from outside of your application.
+placed inside a .env file during the development phase 
+these files are handled using the dotenv library 
+// how to ensure privacy in your application ? .env is one of the method
+
+connection string ?
+
+Express 
+-------
+Express is a framework of node.js
+
+Steps to create an express server
+
+1) create a folder for express-server/backend 
+2) run npm init -y command inside the backend folder
+3) edit the script tag inside the package.json file in order to run the entry point 
+4) install the required libraries for the server side 
+5) we need to install a set of libraries for the backend 
+	- npm install express
+	- npm install cors (cross origin resource sharing) - to connect with the frontend 
+	- npm install dotenv ( for handling the environment variables
+	- npm install mongoose ( in order to create connection with the database)
+6) Create .gitignore file with node_modules/
+7) Create index.js file 
+8) Create .env file to store the environment variables
+9) add .env to the .gitignore file
+10) create server in index.js
+
+
+
+
