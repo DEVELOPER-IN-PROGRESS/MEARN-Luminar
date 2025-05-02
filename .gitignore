@@ -2,3 +2,5 @@ ASSIGNMENTS/
 01_WEB/
 node_modules
 PROJ4/
+*.swp
+

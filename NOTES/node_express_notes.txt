@@ -1,22 +1,22 @@
-MODULE V 
+MODULE V
 Node and Express
 
-MCV Architecture 
-M: Model 
+MCV Architecture
+M: Model
 V: View
 C: Controller
 
 <MVC Architecture diagram here >
-Model is the structure in which the data is defined 
-View the client which sends the request 
+Model is the structure in which the data is defined
+View the client which sends the request
 Controller is a function which contains the logic to solve the request
 
-Router : contains the path  which is meant to  resolve the request 
+Router : contains the path  which is meant to  resolve the request
 
 Node
 Node is a runtime environment for the javascript which can be executed outside the browser
 
-Modules: 
+Modules:
 Modules are js files or libraries that can be used in the node.js application to provide specific functionalities. If you want to use a module in your application it should be imported.
 
 In the backend we use the 'require' keyword in place of import.
@@ -34,7 +34,7 @@ Types of modules
 	4) delete a file - unlink()
 	5) rename a file - rename()
 
-  2) HTTP Module: 
+  2) HTTP Module:
     - It helps to transfer data with http
     - It can create an http server which have the ability to resolve the request - createServer()
 
@@ -42,44 +42,149 @@ Types of modules
     - can create a server which can resolve request coming in https protocol
 
   4) Event modules
-    - 
-    
+    -
+
   5) Crypto Modules
-    - Used to encryption and decryption 
+    - Used to encryption and decryption
 
 
 2) Custom modules
 
 
 Environment Variables
-It is a variable which is typically used to provide the ability to configure a value in your code 
+It is a variable which is typically used to provide the ability to configure a value in your code
 from outside of your application.
-placed inside a .env file during the development phase 
-these files are handled using the dotenv library 
+placed inside a .env file during the development phase
+these files are handled using the dotenv library
 // how to ensure privacy in your application ? .env is one of the method
 
 connection string ?
 
-Express 
+Express
 -------
 Express is a framework of node.js
 
 Steps to create an express server
 
-1) create a folder for express-server/backend 
+1) create a folder for express-server/backend
 2) run npm init -y command inside the backend folder
-3) edit the script tag inside the package.json file in order to run the entry point 
-4) install the required libraries for the server side 
-5) we need to install a set of libraries for the backend 
+3) edit the script tag inside the package.json file in order to run the entry point
+4) install the required libraries for the server side
+5) we need to install a set of libraries for the backend
 	- npm install express
-	- npm install cors (cross origin resource sharing) - to connect with the frontend 
+	- npm install cors (cross origin resource sharing) - to connect with the frontend
 	- npm install dotenv ( for handling the environment variables
 	- npm install mongoose ( in order to create connection with the database)
 6) Create .gitignore file with node_modules/
-7) Create index.js file 
+7) Create index.js file
 8) Create .env file to store the environment variables
 9) add .env to the .gitignore file
 10) create server in index.js
+
+
+
+MONGODB 
+1) local use - mongodb compass
+2) cloud use - mongodb atlas 
+
+
+
+
+
+30/04/2025
+mongoDb operations
+
+GET
+
+1) show databases  - to list all the databases from connnections
+2) use <database name> - to switch to a particular database
+3) show collections - to show all the collections inside a particular database
+4)db.createCollections - to create a new collection
+ collections are equivalent to tables in mySql
+ whereas the document in nosql are equivalent to records in SQL
+  this can be created manually using in the create collection button in the atlas UI
+5) 
+
+
+POST (data)
+
+:NB : users in all of the example corresponds to collection- name in a database 
+10) insert 
+	insertOne(Object)
+	we can only insert one object at a time with this method
+    insertMany()
+ to insert more that one document . this can be done by passing the argument as array of objects
+  db.users.insertMany([ obj1, obj2 ...] )
+
+11_ update 
+	- updateOne() - at a time s single document can be updated 
+	- updateMany() - update more than one item ar a time 
+
+
+13) drop collectiions ( delete the whole database)
+ db.dropCollections() - to delete the entire database
+
+14) to drop a specific collection name 
+    db.collectionName.drop() - to remove a collection
+
+
+query based 
+--------------
+
+-- operators are represented by $ symbol 
+ - greater than represented by $gte
+ - less that represented by $lt
+ - greater than or equal to represented by $gte
+ - less than or equal to represented by $lte
+ - equal to $eq 
+ - $inc - increment  
+ - $unset - delete a key 
+
+ Refer: Indexing - Sharding and Replication , horizontal and vertical scaling 
+
+
+
+
+
+Logical Operations 
+- and represented by   $and
+  or :   $or 
+- db.users.find( { key:{ $or:[{},{}] })
+
+
+DELETE
+-------
+
+Aggregation 
+------------
+- It process one or more documents and returns a computed result
+- group values from multiple documents 
+
+
+syntax
+-------
+{
+    {
+	
+    }
+}
+
+In case of an error retry creating a new project add new cluster 
+create a username and passoword and make sure to save this password as well 
+
+in the database url or connection  make sure to edit the cluster url and add the database in the connection string 
+
+add this to the .env file as well 
+
+
+14) create a cluster in mongodb atlas and paste the connection string in the .env file
+15) connect the server with the database by conncting it with the new file created (database connection.js file 
+    - import dotenv  library in the index.js  - invoke config()  to load the environment variables (at the top)
+    - create a connection file and invoke connect method in the mongoose library to connect with the database.
+    - 
+
+16) create a model folder in case you have multiple files 
+
 
 
 
