@@ -83,9 +83,9 @@ Steps to create an express server
 
 
 
-MONGODB 
+MONGODB
 1) local use - mongodb compass
-2) cloud use - mongodb atlas 
+2) cloud use - mongodb atlas
 
 
 
@@ -103,89 +103,95 @@ GET
  collections are equivalent to tables in mySql
  whereas the document in nosql are equivalent to records in SQL
   this can be created manually using in the create collection button in the atlas UI
-5) 
+5)
 
 
 POST (data)
 
-:NB : users in all of the example corresponds to collection- name in a database 
-10) insert 
+:NB : users in all of the example corresponds to collection- name in a database
+10) insert
 	insertOne(Object)
 	we can only insert one object at a time with this method
     insertMany()
  to insert more that one document . this can be done by passing the argument as array of objects
   db.users.insertMany([ obj1, obj2 ...] )
 
-11_ update 
-	- updateOne() - at a time s single document can be updated 
-	- updateMany() - update more than one item ar a time 
+11_ update
+	- updateOne() - at a time s single document can be updated
+	- updateMany() - update more than one item ar a time
 
 
 13) drop collectiions ( delete the whole database)
  db.dropCollections() - to delete the entire database
 
-14) to drop a specific collection name 
+14) to drop a specific collection name
     db.collectionName.drop() - to remove a collection
 
 
-query based 
+query based
 --------------
 
--- operators are represented by $ symbol 
+-- operators are represented by $ symbol
  - greater than represented by $gte
  - less that represented by $lt
  - greater than or equal to represented by $gte
  - less than or equal to represented by $lte
- - equal to $eq 
- - $inc - increment  
- - $unset - delete a key 
+ - equal to $eq
+ - $inc - increment
+ - $unset - delete a key
 
- Refer: Indexing - Sharding and Replication , horizontal and vertical scaling 
-
-
+ Refer: Indexing - Sharding and Replication , horizontal and vertical scaling
 
 
 
-Logical Operations 
+
+
+Logical Operations
 - and represented by   $and
-  or :   $or 
+  or :   $or
 - db.users.find( { key:{ $or:[{},{}] })
 
 
 DELETE
 -------
 
-Aggregation 
+Aggregation
 ------------
 - It process one or more documents and returns a computed result
-- group values from multiple documents 
+- group values from multiple documents
 
 
 syntax
 -------
 {
     {
-	
+
     }
 }
 
-In case of an error retry creating a new project add new cluster 
-create a username and passoword and make sure to save this password as well 
+In case of an error retry creating a new project add new cluster
+create a username and passoword and make sure to save this password as well
 
-in the database url or connection  make sure to edit the cluster url and add the database in the connection string 
+in the database url or connection  make sure to edit the cluster url and add the database in the connection string
 
-add this to the .env file as well 
+add this to the .env file as well
 
 
 14) create a cluster in mongodb atlas and paste the connection string in the .env file
-15) connect the server with the database by conncting it with the new file created (database connection.js file 
+15) connect the server with the database by conncting it with the new file created (database connection.js file
     - import dotenv  library in the index.js  - invoke config()  to load the environment variables (at the top)
     - create a connection file and invoke connect method in the mongoose library to connect with the database.
-    - 
+    -
 
-16) create a model folder in case you have multiple files 
-
-
+16) create a model folder in case you have multiple files
 
 
 
+
+
+05/05/2025
+we use jsonwebtoken to generate the auth token for identifying the logged in username
+JWT authentication
+
+- sign token generation
+- let token = jwt.sign({key:value}, secretkey)
