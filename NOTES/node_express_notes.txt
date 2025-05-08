@@ -74,21 +74,108 @@ Steps to create an express server
 	- npm install express
 	- npm install cors (cross origin resource sharing) - to connect with the frontend
 	- npm install dotenv ( for handling the environment variables
-	- npm install mongoose ( in order to create connection with the database)
+	- npm install mongoose ( in order to create connection between the server and the database)
 6) Create .gitignore file with node_modules/
 7) Create index.js file
 8) Create .env file to store the environment variables
 9) add .env to the .gitignore file
 10) create server in index.js
+	- express 
+	- listening port for the server
+	- listen to the port
+11) use cors to connect the server with the frontend (cors())
+12) parsing the json data through a middleware with express.json()
+13) create router file (a.k.a routes.js ) in the backend which handles all the incoming requests 
+14) create a controller to handle the logic (new folder )
+15) 
+
+cors (cross origin resource sharing ) - the backend and the frontend will be in separate locations or 
+domains and inorder to share data between different domains we will have to connect these , and this connection 
+can be achieved via cors library . 
+
+29/04/2025
+RECORD LOGS
+----- --- -- 
+imported cors and stored it into a variable (bookServer.use(cors()))
+
+inorder to parse the data in between we use a middleware inside the express 
+which is done using  bookServer.use(express.json()) as json is a common standard format for 
+sharing data between different programming languages 
+
+now that we have set up our middleware we need to channelize the incoming requests which can be converted 
+into logical operations  so inorder to do that we use/create routes.js file 
+
+we create the routes using the router class which is predefined inside the express library 
+const route = new express.Router()
+
+firstly we are setting route for the register functionality 
+since we are posting the data we use route.post( path , <controller_logic> ) instead of route.get() 
+
+inorder for the server to use our routes we need to export it which can be done using 
+module.exports = route
+
+inside the index.js import the route from the routes file 
+
+we have now created a path for the requests now we need the do the logic which is done using the controller part
+so create a folder for the controllers and a userController.js file for now which handles the registration 
+
+exports.registerController = (req,res) => {
+  //TODO: logic 
+} 
+
+import userController inside the routes file at the top 
+import userController = require('./controllers/userController') ;
+
+inside the register route use the controller using the format... 
+route.post('/register' ,userController.registerController) 
+
+if we place the routes before parsing inside the index.js we would be handling the json data which would result in an error so the order must be followed speicifically i.e  cors(), express.json() for parsing , route  for 
+chanelizing the request 
+
+now we are passing the register details to the controller via thunderclient using a POST request (username, email , password) 
+
+once the request is broken down and the data is received in the console we need to check whether the data existsinside the database and hence we are introducing ... ... MongoDB
 
 
 
-MONGODB
+
+
+MODULE 4  - MONGODB
+--Database: 
+ database is used to organize a collection of data that are stored and managed in such a way
+ that it makes easy to retrieve update and manupulate data queries 
+
+--database can be classified into 
+1) SQL - Structured Query Language
+2) NoSQL _ Not Only Structured Query Language 
+
+sql 					nosql
+-------				    ------------
+- relational database              -  non relational , 
+- table like format		   - need not be a table like structure ( eg: graphs , documents , column key:value)
+- rigid schema (structure)         - not rigid and hence a flexible schema 
+- suitable for financial and       - used in real time applications , 
+  banking application or 
+ for small amount of data 
+- eg MYSqL , postgreSQL , SQlite   - eg: mongodb(document) ,redis, cassandra(column wise) , neo4j 
+
+
+MONGO DB
+In mongoDB data is stored in a format similar to json a.k.a BSON - binary JSON 
+structure 
+-- 
+in a single mongodb deployment we can create more that 1 database 
+1 database can contain one or more collections - this collections corresponds to a table in SQL databases
+inside one collection one or more documents can be stored  -> corresponds to a record in SQL  (or data row in sql) 
+
+inside one document there can be one or more fields - a field is a key:value pair where data will be stored as a data to the key 
+
+each document is having a unique identifier called the ObjectId__ 
+
+
+mongodb can be used in two ways i.e 
 1) local use - mongodb compass
 2) cloud use - mongodb atlas
-
-
-
 
 
 30/04/2025
@@ -142,10 +229,6 @@ query based
 
  Refer: Indexing - Sharding and Replication , horizontal and vertical scaling
 
-
-
-
-
 Logical Operations
 - and represented by   $and
   or :   $or
@@ -195,3 +278,140 @@ JWT authentication
 
 - sign token generation
 - let token = jwt.sign({key:value}, secretkey)
+
+
+06/05/25
+React OAuth - library
+
+Google OAuth2 using the new google identity service SDK for the react
+The Google Identity Services JavaScript library helps you to quickly and safely
+obtain access tokens necessary to call Google APIs. Your web application, complete
+either the OAuth 2.0 implicit flow, or to initiate the authorization code flow which
+then finishes on your backend platform.
+
+
+Steps to Follow in this case
+1) wrap your entire application inside the GoogleOAuthProvider component
+ inside the main.jsx file
+2) Pass the client id in the provider tag directly or via the environment variable
+3) Access the google console backend.
+4) Create a new project with your required name
+5) select the API & Services and click the generate credentials
+6) Configure consent screen -> Get Started -> App information -> Audience (External option)
+  ->contact information -> finish
+7) Create the OAuth Client Id from the clients tab
+
+
+Next we need to install the jwt-decode library to verify the token coming
+
+in the routes we need to set a /google-login path as we are using that path when we send out API request
+
+07/05/2025
+
+/add-book path have to verify the request 
+
+middlewares should be required for breaking the request 
+
+Middlewares
+------------
+middleware is a function which have the capacity to breal the request-response cycle 
+and to a specific task such as authentication , data exchange , messaging , connnectivity 
+
+1) built-in middlewares
+2) custom middlewares
+
+based on the scope 
+1) application specific
+ all the request in the application passes through the middleware 
+2) Route specific
+  middleware will be active in a specified path or route 
+
+appMiddleware.js
+
+// argument order is important ,
+const appMiddleware = (req,res, next) => {
+    console.log('inside middleware function')
+    //todo  logic
+}
+
+module.exports = appMiddleware;
+
+if the requests are application specific it should go through the appMiddlware middleware 
+so we should place this middleware in the index.js as that is the only entry point 
+
+/* **** / 
+
+middleware can control the the request response cycle with the next() method 
+if we don't specify the next() the control wont be forwarded 
+
+
+Bearer is the authorization schema 
+this means that the person passing the token should be given the authorization/access 
+we pass it with the headers as  "Authorization: Bearer <token>" 
+
+other example for the schema are :: basic, digest , API_KEY , OAuth 
+
+
+we need to access the token inside the jwt middleware
+
+
+in the jwt library sign method is used to generate the token 
+and the verify() method is used to dedode/verify the token passed along with the request 
+
+
+jwt.verify( <token> , <secret_key>) => return an embedded data 
+(embedded_data , iat) 
+when we decode the jwt token we also get an iat key along with the data passed 
+iat is the issued at time value in seconds ( since jan 1 1970's ) 
+
+since we already got the email from the token the bookcontroller schems expect the email 
+this can be done by passing the email with the request  with the request.payload() method 
+syntax :  request.payload = jwtResponse.email 
+
+in order to get to handle the multipart/form-data we can use the multer node.js middleware 
+used when we want to upload files to the backend 
+Multer will "NOT" process any form which is not multipart ( underrated note) 
+
+multer will add a body object and a file or files object to the request object 
+The body object contains the value of the text field and file/fileObject contains the  files uploaded via the form
+
+diskstorage engine gives you full control on storing files to the disk
+Steps to handle the multer module 
+
+1) create a separate file with extension as js (in the middleaware folder )
+2) import multer  
+	const multer = require('multer')  
+
+3) create the multer configuration with our required options
+   
+   const storage = multer.diskstorage({
+	destination: (req,file,callback) => { 
+	   callback(null,'./uploads')  // uploads should be a folder inside our backend
+	}
+
+	
+
+   })
+   
+   fileFilter
+   ----
+   since we can upload any type of file we need to set a filter to block unwanted files . 
+   fileFilter should be a function that control which type of file goes into the server 
+
+   cd (callback ) return true - accept the file
+   cd (Callback ) return false - reject the file 
+
+
+   // please note the keys used above as that should be passed in the multer configuration 
+   const multerConfig = multer({
+	
+   })
+
+	
+   If the file.mimeType == image/png or file.mimetype == image/jpg  we can set the callback to true
+   else we can set false in the callback ( accept only jpg and jpeg) 
+
+
+in the routes file add the multer middleware
+multerConfig.array('uploadedImages',3)  
+the uploadeImages key is passed along with the request 
