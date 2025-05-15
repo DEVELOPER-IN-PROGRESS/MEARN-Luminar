@@ -137,9 +137,6 @@ now we are passing the register details to the controller via thunderclient usin
 once the request is broken down and the data is received in the console we need to check whether the data existsinside the database and hence we are introducing ... ... MongoDB
 
 
-
-
-
 MODULE 4  - MONGODB
 --Database: 
  database is used to organize a collection of data that are stored and managed in such a way
@@ -234,9 +231,11 @@ Logical Operations
   or :   $or
 - db.users.find( { key:{ $or:[{},{}] })
 
-
+ 
 DELETE
 -------
+
+02/05/2025
 
 Aggregation
 ------------
@@ -246,11 +245,29 @@ Aggregation
 
 syntax
 -------
-{
+$lookup {
     {
-
+     from: <collection to join>,
+     localField: <field from the input documents>,
+     foreignField: <field from the document of the "from" collection >,
+     as: <output array field>
     }
 }
+
+
+
+RECORD LOGS
+---- ---- ---- 
+
+we are experimenting with data aggregation and hence in the users collection 
+we are creating two objects and one of the objects having a id: and a key poiniting to another user's object ID
+
+
+
+
+
+
+END 02/05/2025
 
 In case of an error retry creating a new project add new cluster
 create a username and passoword and make sure to save this password as well
@@ -267,7 +284,6 @@ add this to the .env file as well
     -
 
 16) create a model folder in case you have multiple files
-
 
 
 
@@ -414,4 +430,53 @@ Steps to handle the multer module
 
 in the routes file add the multer middleware
 multerConfig.array('uploadedImages',3)  
-the uploadeImages key is passed along with the request 
+the uploadeImages key is passed along with the request
+
+
+15/05/2025
+Profile.jsx
+
+we are using imagePreview state for showing the image preview in the upload form 
+
+inroder to convert the file object into our system based url ( in the profile page ) 
+we can use the   URL.createObjectURL(filename) method  
+
+the url in this case would appear as a blob in the console
+
+we are using an imagePreview state to conditionally render the uploaded image and a 
+placeholder image as well 
+
+we have added the input functionality to the + icon as well 
+- since we are planning to upload more that 1 image we need a new state to handle all the 
+uploaded images previews as well 
+
+- we are conditionally rendering the + icon when we have uploaded exactly 3 images as 
+we have set a backend limit on the multer 
+
+-- add the reset functionality by setting the all the states with the initial value when we 
+click the reset button 
+
+-- we have created the submit functionality by validating all the fields and then submitting to the backend via a common APi (uploadBookApi) 
+
+we also need to pass the token when we are calling th uploadBookApi 
+so when the page loads we are checking in the session storage whether a token is 
+present or not  and we need to pass it via the reqHeader
+
+FormData class
+the data from the frontend which is having uploaded content should be send in form
+of formdata as the application/type . or else axios would return an error 
+
+inorder to pass the data in the requestBody we need to append each key with its value::
+since the uploadedImages are an array of image object we need to handle them separately 
+this can be achieved with this snippet 
+
+for (let key in bookDetails) {
+         if(key != 'uploadedImg'){
+            reqBody.append(key,bookDetails[key])
+         }else{
+          bookDetails.uploadedImg.forEach( item => reqBody.append("uploadedImg",item) )
+         }
+}
+
+
+

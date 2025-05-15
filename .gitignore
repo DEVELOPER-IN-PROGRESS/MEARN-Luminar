@@ -4,3 +4,6 @@ node_modules
 PROJ4/
 *.swp
 07_REACT/bookstore/frontend
+07_REACT/bookstore/backend
+*frontend/
+
