@@ -479,4 +479,95 @@ for (let key in bookDetails) {
 }
 
 
+16/05/2025
+in the profile.jsx we are passing the form data make sure that the multer and the passed name of the uplaoded images are the same  "uploadedImages" as per my  program 
+Upon successful request we can see the bookdetails stored inside the books collections in our mongodb cloud
 
+
+inorder to display the latest books in the home page we need to sort every book present in the mongodb sorted by _id in descending order and then a limit can be applied to show only a certain count of books
+i.e const allBooks = await books.find().sort({_id:-1}).limit(4)
+
+
+from the home page we need now the control towards the 'explore more' button i.e all-books route in react
+
+in the book controller we need to add a new controller to get all the books 
+i.e getAllBooKController
+
+all the database books should be available only to the logged in user so we are passing a jwt token in the route or through the jwtMiddleware . and hence we also need to pass the authorization token via the request Header 
+
+
+17/05/2025
+/view-book/:id
+in order to pass the parameters or use the parameters we can use the useParams hook in react
+
+API to view a book (frontend) in the common Api  - ViewSingleBookApi
+we are not passing any reqHeader or reqbody in this case 
+
+we need to export the uploaded images folder in to cloud inorder to display the images as urls 
+to do that we use the express.static 
+bookServer.use('/uploads',express.static('./uploads'))
+
+
+in the all-Books and the home page  component we have a search functionality 
+we can either use state lifting on the parent to share between the siblings 
+or we can use redux with a global store 
+Or we are using useContext in this case 
+ way of sharing the data globally in react instead of using redux 
+
+
+Steps to Create a context API
+1) create a context folder in the frontend 
+2) create a contextShare.jsx component inside it 
+3) load the basic structure 
+4) Wrap the app with the context share component inside the main.jsx
+
+inside the contextShare component create a search context
+and we need to define a state for the search
+
+in the searchKeyContext.Provider tag  set the data to be shared inside the value attribute as 
+object in a comma separated format 
+
+now the data passed inside the value attribute will be accessible globally 
+now inside the allbooks component access the shared data using 
+
+
+queryParameters 
+
+
+
+19/05/2025
+from the allbooks component we need to use the same context and its functionality into the home page
+component
+
+we need to ensure that the user is logged in before accessing the book search feature 
+and hence we need to check whether the user has a token to ensure he is a logged-in valid user
+
+if not logged in we need to use navigate hook to navigate to login page 
+so in the initial page load we need to check and set the logged in token in a separate state 
+and then add the check conditions in the handleSearch function 
+
+TODO:
+careeers
+buy book 
+admin section to approve the books 
+
+in the allbooks section we need to show only the books added by the user  which can be done in two ways
+via frontend: use filter function to show only the books added from that email
+via backend : use mongodb query to access all the books not having the user's email 
+which can be obtained throught the request payload in the book controller 
+
+
+we need to hide the pending books from the frontend and show only the approved books 
+which can be obtained from the book status
+
+aDmin Books
+--------
+add an admin controller for getting all the books in the bookcontroller for the admin side 
+and add the controller to the  route. ensure that jwtMiddleware is also used for the admin too 
+
+approved books
+add in a new controller (approveBookController) 
+check whether the book that we are sending is actually inside the database 
+or else we would get an error
+
+{new: true} // tells mongdb to save new data 
