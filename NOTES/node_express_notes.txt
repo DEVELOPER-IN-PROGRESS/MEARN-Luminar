@@ -570,4 +570,37 @@ add in a new controller (approveBookController)
 check whether the book that we are sending is actually inside the database 
 or else we would get an error
 
-{new: true} // tells mongdb to save new data 
+{new: true} // tells mongdb to save new data
+
+20/05/2025
+
+inside the userController add the getAllUsesController 
+we dont need to display the details of the admin which can be done by passing the admin 
+email in the request payload and using the mongodb filter condition to remove the admin details
+
+
+admin books 
+completed 
+
+
+admin careers
+we are creating a new controller for the jobs 
+in the controller we are expecting 
+title,location , type ,salary , qualification, experience from the
+request body
+
+we need to create a job model inside the models folder  jobModels.js
+
+add the controller to the routes file
+
+homework: post jobs to the backend via frontened form and api 
+
+
+21/05/2025
+
+this is the newest file 
+
+
+
+
+
