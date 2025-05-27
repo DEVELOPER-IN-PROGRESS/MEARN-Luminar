@@ -186,8 +186,132 @@ GET
 4)db.createCollections - to create a new collection
  collections are equivalent to tables in mySql
  whereas the document in nosql are equivalent to records in SQL
+now that we have set up our middleware we need to channelize the incoming requests which can be converted 
+into logical operations  so inorder to do that we use/create routes.js file 
+
+we create the routes using the router class which is predefined inside the express library 
+const route = new express.Router()
+
+firstly we are setting route for the register functionality 
+since we are posting the data we use route.post( path , <controller_logic> ) instead of route.get() 
+
+inorder for the server to use our routes we need to export it which can be done using 
+module.exports = route
+
+inside the index.js import the route from the routes file 
+
+we have now created a path for the requests now we need the do the logic which is done using the controller part
+so create a folder for the controllers and a userController.js file for now which handles the registration 
+
+exports.registerController = (req,res) => {
+  //TODO: logic 
+} 
+
+import userController inside the routes file at the top 
+import userController = require('./controllers/userController') ;
+
+inside the register route use the controller using the format... 
+route.post('/register' ,userController.registerController) 
+
+if we place the routes before parsing inside the index.js we would be handling the json data which would result in an error so the order must be followed speicifically i.e  cors(), express.json() for parsing , route  for 
+chanelizing the request 
+
+now we are passing the register details to the controller via thunderclient using a POST request (username, email , password) 
+
+once the request is broken down and the data is received in the console we need to check whether the data existsinside the database and hence we are introducing ... ... MongoDB
+
+
+MODULE 4  - MONGODB
+--Database: 
+ database is used to organize a collection of data that are stored and managed in such a way
+ that it makes easy to retrieve update and manupulate data queries 
+
+--database can be classified into 
+1) SQL - Structured Query Language
+2) NoSQL _ Not Only Structured Query Language 
+
+sql 					nosql
+-------				    ------------
+- relational database              -  non relational , 
+- table like format		   - need not be a table like structure ( eg: graphs , documents , column key:value)
+- rigid schema (structure)         - not rigid and hence a flexible schema 
+- suitable for financial and       - used in real time applications , 
+  banking application or 
+ for small amount of data 
+- eg MYSqL , postgreSQL , SQlite   - eg: mongodb(document) ,redis, cassandra(column wise) , neo4j 
+
+
+MONGO DB
+In mongoDB data is stored in a format similar to json a.k.a BSON - binary JSON 
+structure 
+-- 
+in a single mongodb deployment we can create more that 1 database 
+1 database can contain one or more collections - this collections corresponds to a table in SQL databases
+inside one collection one or more documents can be stored  -> corresponds to a record in SQL  (or data row in sql) 
+
+inside one document there can be one or more fields - a field is a key:value pair where data will be stored as a data to the key 
+
+each document is having a unique identifier called the ObjectId__ 
+
+
+mongodb can be used in two ways i.e 
+1) local use - mongodb compass
+2) cloud use - mongodb atlas
+
+
+30/04/2025
+mongoDb operations
+
+GET
+
+1) show databases  - to list all the databases from connnections
+2) use <database name> - to switch to a particular database
+3) show collections - to show all the collections inside a particular database
+4)db.createCollections - to create a new collection
+ collections are equivalent to tables in mySql
+ whereas the document in nosql are equivalent to records in SQL
   this can be created manually using in the create collection button in the atlas UI
 5)
+
+
+POST (data)
+
+:NB : users in all of the example corresponds to collection- name in a database
+10) insert
+	insertOne(Object)
+	we can only insert one object at a time with this method
+    insertMany()
+ to insert more that one document . this can be done by passing the argument as array of objects
+  db.users.insertMany([ obj1, obj2 ...] )
+
+11_ update
+	- updateOne() - at a time s single document can be updated
+	- updateMany() - update more than one item ar a time
+
+
+13) drop collectiions ( delete the whole database)
+ db.dropCollections() - to delete the entire database
+
+14) to drop a specific collection name
+    db.collectionName.drop() - to remove a collection
+
+
+query based
+--------------
+
+-- operators are represented by $ symbol
+ - greater than represented by $gte
+ - less that represented by $lt
+ - greater than or equal to represented by $gte
+ - less than or equal to represented by $lte
+ - equal to $eq
+ - $inc - increment
+ - $unset - delete a key
+
+ Refer: Indexing - Sharding and Replication , horizontal and vertical scaling
+
+Logical Operations
+- and represented by   $and
 
 
 POST (data)
@@ -294,130 +418,6 @@ JWT authentication
 
 - sign token generation
 - let token = jwt.sign({key:value}, secretkey)
-
-
-06/05/25
-React OAuth - library
-
-Google OAuth2 using the new google identity service SDK for the react
-The Google Identity Services JavaScript library helps you to quickly and safely
-obtain access tokens necessary to call Google APIs. Your web application, complete
-either the OAuth 2.0 implicit flow, or to initiate the authorization code flow which
-then finishes on your backend platform.
-
-
-Steps to Follow in this case
-1) wrap your entire application inside the GoogleOAuthProvider component
- inside the main.jsx file
-2) Pass the client id in the provider tag directly or via the environment variable
-3) Access the google console backend.
-4) Create a new project with your required name
-5) select the API & Services and click the generate credentials
-6) Configure consent screen -> Get Started -> App information -> Audience (External option)
-  ->contact information -> finish
-7) Create the OAuth Client Id from the clients tab
-
-
-Next we need to install the jwt-decode library to verify the token coming
-
-in the routes we need to set a /google-login path as we are using that path when we send out API request
-
-07/05/2025
-
-/add-book path have to verify the request 
-
-middlewares should be required for breaking the request 
-
-Middlewares
-------------
-middleware is a function which have the capacity to breal the request-response cycle 
-and to a specific task such as authentication , data exchange , messaging , connnectivity 
-
-1) built-in middlewares
-2) custom middlewares
-
-based on the scope 
-1) application specific
- all the request in the application passes through the middleware 
-2) Route specific
-  middleware will be active in a specified path or route 
-
-appMiddleware.js
-
-// argument order is important ,
-const appMiddleware = (req,res, next) => {
-    console.log('inside middleware function')
-    //todo  logic
-}
-
-module.exports = appMiddleware;
-
-if the requests are application specific it should go through the appMiddlware middleware 
-so we should place this middleware in the index.js as that is the only entry point 
-
-/* **** / 
-
-middleware can control the the request response cycle with the next() method 
-if we don't specify the next() the control wont be forwarded 
-
-
-Bearer is the authorization schema 
-this means that the person passing the token should be given the authorization/access 
-we pass it with the headers as  "Authorization: Bearer <token>" 
-
-other example for the schema are :: basic, digest , API_KEY , OAuth 
-
-
-we need to access the token inside the jwt middleware
-
-
-in the jwt library sign method is used to generate the token 
-and the verify() method is used to dedode/verify the token passed along with the request 
-
-
-jwt.verify( <token> , <secret_key>) => return an embedded data 
-(embedded_data , iat) 
-when we decode the jwt token we also get an iat key along with the data passed 
-iat is the issued at time value in seconds ( since jan 1 1970's ) 
-
-since we already got the email from the token the bookcontroller schems expect the email 
-this can be done by passing the email with the request  with the request.payload() method 
-syntax :  request.payload = jwtResponse.email 
-
-in order to get to handle the multipart/form-data we can use the multer node.js middleware 
-used when we want to upload files to the backend 
-Multer will "NOT" process any form which is not multipart ( underrated note) 
-
-multer will add a body object and a file or files object to the request object 
-The body object contains the value of the text field and file/fileObject contains the  files uploaded via the form
-
-diskstorage engine gives you full control on storing files to the disk
-Steps to handle the multer module 
-
-1) create a separate file with extension as js (in the middleaware folder )
-2) import multer  
-	const multer = require('multer')  
-
-3) create the multer configuration with our required options
-   
-   const storage = multer.diskstorage({
-	destination: (req,file,callback) => { 
-	   callback(null,'./uploads')  // uploads should be a folder inside our backend
-	}
-
-	
-
-   })
-   
-   fileFilter
-   ----
-   since we can upload any type of file we need to set a filter to block unwanted files . 
-   fileFilter should be a function that control which type of file goes into the server 
-
-   cd (callback ) return true - accept the file
-   cd (Callback ) return false - reject the file 
-
-
    // please note the keys used above as that should be passed in the multer configuration 
    const multerConfig = multer({
 	
@@ -505,102 +505,237 @@ we are not passing any reqHeader or reqbody in this case
 
 we need to export the uploaded images folder in to cloud inorder to display the images as urls 
 to do that we use the express.static 
-bookServer.use('/uploads',express.static('./uploads'))
+now that we have set up our middleware we need to channelize the incoming requests which can be converted 
+into logical operations  so inorder to do that we use/create routes.js file 
+
+we create the routes using the router class which is predefined inside the express library 
+const route = new express.Router()
+
+firstly we are setting route for the register functionality 
+since we are posting the data we use route.post( path , <controller_logic> ) instead of route.get() 
+
+inorder for the server to use our routes we need to export it which can be done using 
+module.exports = route
+
+inside the index.js import the route from the routes file 
+
+we have now created a path for the requests now we need the do the logic which is done using the controller part
+so create a folder for the controllers and a userController.js file for now which handles the registration 
+
+exports.registerController = (req,res) => {
+  //TODO: logic 
+} 
+
+import userController inside the routes file at the top 
+import userController = require('./controllers/userController') ;
+
+inside the register route use the controller using the format... 
+route.post('/register' ,userController.registerController) 
+
+if we place the routes before parsing inside the index.js we would be handling the json data which would result in an error so the order must be followed speicifically i.e  cors(), express.json() for parsing , route  for 
+chanelizing the request 
+
+now we are passing the register details to the controller via thunderclient using a POST request (username, email , password) 
+
+once the request is broken down and the data is received in the console we need to check whether the data existsinside the database and hence we are introducing ... ... MongoDB
 
 
-in the all-Books and the home page  component we have a search functionality 
-we can either use state lifting on the parent to share between the siblings 
-or we can use redux with a global store 
-Or we are using useContext in this case 
- way of sharing the data globally in react instead of using redux 
+MODULE 4  - MONGODB
+--Database: 
+ database is used to organize a collection of data that are stored and managed in such a way
+ that it makes easy to retrieve update and manupulate data queries 
+
+--database can be classified into 
+1) SQL - Structured Query Language
+2) NoSQL _ Not Only Structured Query Language 
+
+sql 					nosql
+-------				    ------------
+- relational database              -  non relational , 
+- table like format		   - need not be a table like structure ( eg: graphs , documents , column key:value)
+- rigid schema (structure)         - not rigid and hence a flexible schema 
+- suitable for financial and       - used in real time applications , 
+  banking application or 
+ for small amount of data 
+- eg MYSqL , postgreSQL , SQlite   - eg: mongodb(document) ,redis, cassandra(column wise) , neo4j 
 
 
-Steps to Create a context API
-1) create a context folder in the frontend 
-2) create a contextShare.jsx component inside it 
-3) load the basic structure 
-4) Wrap the app with the context share component inside the main.jsx
+MONGO DB
+In mongoDB data is stored in a format similar to json a.k.a BSON - binary JSON 
+structure 
+-- 
+in a single mongodb deployment we can create more that 1 database 
+1 database can contain one or more collections - this collections corresponds to a table in SQL databases
+inside one collection one or more documents can be stored  -> corresponds to a record in SQL  (or data row in sql) 
 
-inside the contextShare component create a search context
-and we need to define a state for the search
+inside one document there can be one or more fields - a field is a key:value pair where data will be stored as a data to the key 
 
-in the searchKeyContext.Provider tag  set the data to be shared inside the value attribute as 
-object in a comma separated format 
-
-now the data passed inside the value attribute will be accessible globally 
-now inside the allbooks component access the shared data using 
+each document is having a unique identifier called the ObjectId__ 
 
 
-queryParameters 
+mongodb can be used in two ways i.e 
+1) local use - mongodb compass
+2) cloud use - mongodb atlas
 
 
+30/04/2025
+mongoDb operations
 
-19/05/2025
-from the allbooks component we need to use the same context and its functionality into the home page
-component
+GET
 
-we need to ensure that the user is logged in before accessing the book search feature 
-and hence we need to check whether the user has a token to ensure he is a logged-in valid user
-
-if not logged in we need to use navigate hook to navigate to login page 
-so in the initial page load we need to check and set the logged in token in a separate state 
-and then add the check conditions in the handleSearch function 
-
-TODO:
-careeers
-buy book 
-admin section to approve the books 
-
-in the allbooks section we need to show only the books added by the user  which can be done in two ways
-via frontend: use filter function to show only the books added from that email
-via backend : use mongodb query to access all the books not having the user's email 
-which can be obtained throught the request payload in the book controller 
+1) show databases  - to list all the databases from connnections
+2) use <database name> - to switch to a particular database
+3) show collections - to show all the collections inside a particular database
+4)db.createCollections - to create a new collection
+ collections are equivalent to tables in mySql
+ whereas the document in nosql are equivalent to records in SQL
+  this can be created manually using in the create collection button in the atlas UI
+5)
 
 
-we need to hide the pending books from the frontend and show only the approved books 
-which can be obtained from the book status
+POST (data)
 
-aDmin Books
---------
-add an admin controller for getting all the books in the bookcontroller for the admin side 
-and add the controller to the  route. ensure that jwtMiddleware is also used for the admin too 
+:NB : users in all of the example corresponds to collection- name in a database
+10) insert
+	insertOne(Object)
+	we can only insert one object at a time with this method
+    insertMany()
+ to insert more that one document . this can be done by passing the argument as array of objects
+  db.users.insertMany([ obj1, obj2 ...] )
 
-approved books
-add in a new controller (approveBookController) 
-check whether the book that we are sending is actually inside the database 
-or else we would get an error
-
-{new: true} // tells mongdb to save new data
-
-20/05/2025
-
-inside the userController add the getAllUsesController 
-we dont need to display the details of the admin which can be done by passing the admin 
-email in the request payload and using the mongodb filter condition to remove the admin details
+11_ update
+	- updateOne() - at a time s single document can be updated
+	- updateMany() - update more than one item ar a time
 
 
-admin books 
-completed 
+we can add this new job to our allJobs state and pass it as a dependency in useEffect
+
+next we need to handle the job search form we can handle this by saving the input search key into a
+a state and passing this searchKey into the getAllJobs() api as a query parameter 
+and hence we need to update the frontand api and backend controllers as well
+
+added the job delete functionality by passing the mongodb object ID in the handledelete and inside the 
+controller we can delete the job by findByIdandDelete
+
+JOb applicants:
+User side  (Careers.jsx)
+
+similar to the admin side we need to perform the same feature inside the
+careers page. 
+implemented dynamic searching similar to the admin careers 
 
 
-admin careers
-we are creating a new controller for the jobs 
-in the controller we are expecting 
-title,location , type ,salary , qualification, experience from the
-request body
+Created an applicationSchema for sending out the application by the candidate/Applicant
+we need to handle the users resume so we would be needing the multer as well (will do it later)
 
-we need to create a job model inside the models folder  jobModels.js
+first we need to check whether the users email combined with the job title already exists in the database
 
-add the controller to the routes file
-
-homework: post jobs to the backend via frontened form and api 
-
-
-21/05/2025
-
-this is the newest file 
+pdf multer creation
+pdfMulter.js
 
 
 
+22/05//2025 
+
+when setting the files we need to set the e.target.files[0] to true 
+
+when we try to clear the resume field in the state we get an error as the input is of type file 
+which could be done by using document.getElementById('input')
+modern browsers won't allow you to set value dirctly to a input type with  file type 
+
+
+api to add the application 
+we have set the apply-job in the backend so we need to use that in the commonApi
+
+
+request to get all the application from the users in the admin frontend 
+
+u
+
+when viewing the resume we will only get a file we need to export the pdfUploads to a path in the server as
+well like we did with the uploads
+
+
+install recharts library in the frontend
+
+to make the barcharts responsive with the parent  we need to use width and height 100%
+indicate the bar
+cx cy for placing it in the center
+
+
+23/05/2025
+today we are going to start with admin settings
+
+we are using a new state for storing the admin details such as username , password , confirm password
+and profile picture as well 
+for the profile picture we are using a separate state preview,setPreview for showing the picture in the 
+input field
+
+we are storing the admin details in a state and the picture must be stored separately 
+
+in the backend we are creating a separate controller for the admin and user as the admin doesn't have a
+bio filed like for the users 
+
+editAdminProfileController
+
+
+since there are uploaded contents we need a form data to send the contents as well and we will 
+have to use the multer configuration as well 
+write the handleAdd and handleReset functions as well 
+
+next we need the api to update the profile in the frontend (updateProfileApi) 
+
+next in the backend we need a new controlle to edit the profile in the userController as well 
+editadminProfileController
+
+we can either perform the authentication in the frontend or backend its easier in the frontend 
+
+inside the controller we could get a request where there is an image or no image 
+
+Admin Sidebar
+----------
+
+Logout
+---- 
+we are doing client side logout 
+
+
+
+26/05/2025
+
+before we purchase a book we need to set it's status
+so we need 2 controller inside the bookControlller first to find all the books brought by the user 
+and also all the books available to the user (user uploaded book)
+inside the route we need to add in the new 2 controller created just now
+
+next create the api in the frontend allApis that conenct to the created Controller(s)
+
+in the profile we need to call the the above api's when the page is loaded
+whenever the bookstatus is true we need to call the api 
+
+we can use the same or different useEffect hook to split the functions 
+if the bookstatus or the purchase status becomes true we are calling the bookfetching Api 
+and then it is stored to two different states that is userbooks , userBrought 
+and based on the states we are conditionally rendering the array list 
+
+bookstatus tab
+inside this tab we need to set the dummy data with the api result and the book schema keys 
+and as for the bookstatus images we need to set it based on the .status key in the book schema
+
+similarly for the purchase tab we can use the same ui and logic as the bookstatus but the array on which 
+we need to iterate should be userBrought
+
+next we need to add in the function to delete a book from the frontend
+we first add in a dummy book in the frontend
+create  a controller to delete a book from the backend , exports.deleteUserBookController
+
+
+Payment Gateway 
+1)create two components in the pages for success and failure (inside the user folder) 
+2) set the appropriate path inside the app.jsx with the help of the Route component
+3) install the stripe.js in the frontend 
+4) payment is inside the view book page
+5) inroder to make payment with stripe we need to have an account in stripe 
+6)
 
 
