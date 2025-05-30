@@ -6,4 +6,6 @@ PROJ4/
 07_REACT/bookstore/frontend
 07_REACT/bookstore/backend
 *frontend/
+demo-project/
+*.txt.s*
 

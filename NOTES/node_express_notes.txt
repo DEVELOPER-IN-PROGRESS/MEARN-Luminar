@@ -739,3 +739,35 @@ Payment Gateway
 6)
 
 
+27/05/2025
+
+inside the makePaymentController 
+
+create stripe checkout section inside the controller
+refer the stripe api docs and specifically the checkout section 
+
+inside the backend import the stripe sdk and place it in the bookController
+const stripe = require('stripe')(STRIPE_SECRETKEY)
+const session = await stripe.checkout.sessions.create({
+        success_url:""
+     })
+
+inside the session we are using card for the payment method 
+carefully copy the keys from the docs 
+line items are the book details that we are processing 
+
+the session is used for making the payment 
+line_items are the details of the product that you are purchasing 
+if the payment is successful we can pass in a redirection url 
+if the paymnet is failed the failure url can also be passed as well 
+copy the exact url from the frontend and the backend 
+
+for now we are hardcoding it but we should change it later 
+
+in the metabada key of the line items it can only accomodate 500 characters
+make sure to slice it if it exceeds this limit
+
+price , dprice are Number by default , and it should be string 
+
+you can use the 4242 4242 4242 4242 as the dummy card name 
+

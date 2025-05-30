@@ -1,0 +1,192 @@
+---------------------------------------- Angular --------------------------------------
+
+-Angular is a popular open source weba application framework
+Maintained by google 
+base languagte for Angular is Typescript
+
+In case of angular we are not following a declarative approach and we can update the DOM directly 
+Like React Angular is also a component based  application
+
+AOT ( Ahead of Time ) Compilation is follwed in Angular
+It converts tha anuglar html and typescript into js before the browser download and 
+run the code contents
+
+Basic Commands
+--------- 
+-Angular CLI 
+to install the angular CLI use:  npm install -g @angular/cli  (for global installation )
+to install a particular version use  @angular/cli@version
+
+in angular we use ..
+ng new <project name> similar to npm create vite@latest
+
+this would create a new project folder and then change the directory to it
+
+to run the project use:
+ng serve 
+
+to open automatically inside the default  browser use:  ng serve --open
+or you can use the ng s -o as a shorthand
+
+To create a new component use : ng g c folder/componentname
+or the ng generate component folder/componentname
+
+
+Common /Similar files 
+1. package.json - contains the list of libraries installed in the application
+2. package-lock.json - contains all of the version of packages
+3 node_modules/ - contains copy of the installed libraries
+4 README.md - Provides the description of the project 
+5 .gitignore - contains the list of files/folders that won't be pushed to github
+6 public/  - contains the list of publicly accessible contents
+
+7) ts configuration files 
+   contains the TypeScript configuration to be used inside the project 
+   -- tsconfig.app.json
+   -- tsconfig.spec.json
+   -- 
+
+8) angular.json
+   Contains the behaviour configuration of angular inside our project
+ 
+9) .editorconfig
+   it helps maintain consistent coding styles across multiple developers in  working on the same projects 
+
+10) src/ 
+     contains all the application files
+     index.html - entry point of our application
+     main.ts - main logic file
+	inside the main.ts we can observerse a bootStrapApplication() function which help to load the application into browser
+     This function returns a promise and hence we see a catch() method as well 
+
+     similar to createRoot in React we are using the AppComponent which is the root component in angular
+     2nd argument is the appconfig 
+
+     style.css - to provide gloabal styilng inside the application
+
+ 10 app/ (inside src/) 
+    inside the folder select the app.config.ts file 
+ 
+
+Typescript 
+-- --- 
+Typescript is the superset of JavaScript which means ts will have some additional features that won't be available 
+in javascript but not the vice versa
+Javascript is dynamically typed where as Ts is statically typed that means variable type would be same throught the 
+application
+
+Datatype should be mention beforehand in the format variable: datatype = value 
+
+provideZoneChangeDetection({ eventCoalescing: true }) - asynchronous function - zone.js
+provideRouter(routes) - we are passing the routes variable inside this function call which contains the app paths
+ app.routes.ts - export const routes: Routes = [];
+ this is used to set paths 
+ angular uses inhouse routing rather than depending on an external library 
+
+provideClientHydration(withEventReplay()) - This something which we don't handle for now. 
+  	This is used for the server side rendering 
+   
+AppComponent - Unlike React angular have 4 files inside every component
+ 1) component.html
+ 2) component.css
+ 3) component.ts
+ 4) component.spec
+
+Take the app.component.html file
+remove the styles and place only the rout
+logic is placed inside the 
+
+React can work with class and functional components 
+but Angular follows a class Based approach 
+
+
+inside the app.components.ts
+----------------------
+@Component - this is a decoratos which is used to hold the metadata 
+
+
+app.component.css
+inside this file we can use the selector tags to modify the appearence
+same as normal css
+for the inline style angular follows the same format as normal html unlike rEact
+
+app.component.ts
+the Logic of our code goes here 
+
+
+
+Data Binding 
+---- 
+Data Binding is nothing but a way of sharing data 
+we can use several data sharing methods unlike unidirectional in react
+1) two way data sharing/binding 
+2) one way data binding 
+	ts to html and html to ts data sharing 
+
+ts to html  (One Way Data Binding )
+------- 
+1) String Interpolation : similar to react we are using {{ }} inside javascript 
+2) Property Binding: Property binding is the ability to get the data when the variable is placed inside [ ]
+
+html to ts 
+1) events
+whenever there is change in input , button clicks , function calls 
+events eg: (click) , (submit)="value"    
+callback functions : (submit)="function()"
+// similar to onClick in react , or onclick in normal html 
+
+
+2) using $ events  
+3) Template Refernce variable  
+   in normal js we can use a id to fetch the element value whereas in angular we are using the #<id_name>  syntax
+   eg #name , #data etc ...
+
+
+Refer the lifeCycle of angular components 
+
+
+29/05/2025
+Decorators in Angular 
+They are represented by @ . They are used to add the metadata to the class or properties or methods 
+There are many kinds of decorators  for eg: @component , @ngModule ,  @injectable etc...
+
+the 'standalone' key is only available before the angular 19 and not exists after the version 19 
+templateUrl: this key deteremines the html file 
+styleUrl: Determines the Css file 
+
+
+Two way data Binding 
+1) template driven - written inside html
+2) model driven  - 
+
+
+-- Template driven 
+  done via [(ngModel)]
+  we need to import the formsModule in the .ts component
+
+
+
+Directives 
+------- 
+Used to give additional behaviour to the HTML document 
+There are 3 types of directives 
+ a) component directives 
+   creating components to display the content 
+ b) Structural directives ( similar to the truthy and ternary in react )
+   used for the conditional rendering in angular eg: *ngIf , *ngFor
+ c) Attribute directives 
+	USed for styling the HTML document  eg : *ngClass
+
+we cannor create just a component from file unlike react we have to use an angular command 
+ ng g c folder/componentname
+
+we are creating a login and register component inside the app folder 
+we dont need to show the register and login in every page but in the paths we are specifying 
+to do that place the component inside Routes in the  app.routes.ts file
+    {path :'register', component:RegisterComponent},
+
+
+router-outlet is used to place the components based on the root url path ( refer for more)
+
+
+
