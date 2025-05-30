@@ -1,0 +1,33 @@
+<router-outlet/>
+<h1> Demo project </h1>
+
+<p> This is  typing test in angular here we don't really have to specify the body tags in normal html
+as that is already there in the app component
+and unlike react we don't have to use the empty fragments </p>
+
+<p> Since Angular uses the real dom manipulation unlike react the entire application would be reloaded </p>
+
+<h3> Subject:  {{ subject }} (String interpolation method ) </h3>
+
+<img [src]="img" alt="universe" />
+
+<br />
+
+<button (click)="buttonClick()">Alert</button>
+<br />
+<button (click)="printName('Peter',25)">console</button>
+<p></p>
+
+<p></p>
+
+<input #user type="text" placeholder="Enter your Name" (change)="getname($event)"/>
+
+<button (click)="getdata(user)" > get name </button>
+<p></p>
+
+<input type="text" placeholder="Enter the designation" [(ngModel)]="desg" />
+<button (click)="getdesg()">get desg</button>
+
+
+
+
